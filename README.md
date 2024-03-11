@@ -15,7 +15,7 @@ A sada, vrijeme je za prvi korak rada na vašem projektu. 🙂 Za upis/opis vaš
 
 Ime i prezime | E-mail adresa (FOI) | JMBAG | Github korisničko ime
 ------------  | ------------------- | ----- | ---------------------
-Ime i prezime | mojaadresa@foi.hr | 000000000 | githubuser
+Marko Sokser | msokser22@student.foi.hr | 601983 11 0016160744 2| SokserMarko
 
 
 ## Opis domene
