@@ -9,10 +9,9 @@ A sada, vrijeme je za prvi korak rada na vašem projektu. 🙂 Za upis/opis vaš
 
 # Naziv projekta
 Korisnički zahtjevi za Softver za osobnu telemedicinu
-(U redak iznad navedite naziv projekta koji ste dobili za analizu!)
+
 
 ## Podaci o studentu
-(Ispod promijenite samo drugi redak tablice!)
 
 Ime i prezime | E-mail adresa (FOI) | JMBAG | Github korisničko ime
 ------------  | ------------------- | ----- | ---------------------
@@ -20,7 +19,6 @@ Marko Sokser | msokser22@student.foi.hr | 601983 11 0016160744 2| SokserMarko
 
 
 ## Opis domene
-(Vlastitim riječima opišite domenu ili problem koji pokriva projekt vaše zadaće!)
 
 Domena koju pokriva moja projektna zadaća je problem pružanja telemedicinskih usluga putem aplikacije pod nazivom "MyDoc". Ova aplikacija bi trebala omogućiti korisnicima pristup raznim lječnicima opće prakse putem interneta, to jest aplikacije. Glavni problem koji se riješava ovom aplikacijom je pristup zdravstvenog skrbi, zbog dugih redova čekanja ili prepreka poput udaljenosti od lječnika. Aplikacija bi korisnicima trebala omogućiti da jednostavno zakažu konzultacije s lječnicima, bilo to unutar preplatničkih paketa koji su u ponudi ili usluga van pretplatničkih paketa. Time bi se trebao olakšati pristup zdravstvenoj skrbi, eliminirati redovi čekanja, uštediti vrijeme i novac. U globalu domena ove projektne zadaće je integracija zdravstvene skrbi sa informacijskim tehnologijama s ciljem poboljšanja pristupačnosti i učinkovitosti zdravstvenog sustava s posebnim fokusom na studente za koje su osigurani posebni popusti na razne pakete usluga. 
 
