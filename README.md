@@ -37,7 +37,7 @@ Budući korisnici softverskog rješenja MyDoc očekuju od softvera sljedeće mog
 
 ## Zadatak
 
-### [Zadatak](https://github.com/foivz/pi2024-zadace-MarkoSokser/edit/master/README.md)
+### [ Documentation/Korisnički zahtjevi - Softver za osobnu telemedicinu.pdf](https://elf.foi.hr/mod/resource/view.php?id=123452)
 
 ## Resursi
 
