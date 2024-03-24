@@ -37,14 +37,13 @@ Budući korisnici softverskog rješenja MyDoc očekuju od softvera sljedeće mog
 
 ## Zadatak
 
-## [Zadatak](Documentation/Korisnički zahtjevi - Softver za osobnu telemedicinu.pdf)
+### [Zadatak](https://github.com/foivz/pi2024-zadace-MarkoSokser/edit/master/README.md)
 
 ## Resursi
 
+### [Wiki stranica](https://github.com/foivz/pi2024-zadace-MarkoSokser/wiki/Specifikacija-softverskih-zahtjeva-za-Softver-za-osobnu-telemedicinu)
 
-## [Wiki stranica](https://github.com/foivz/pi2024-zadace-MarkoSokser/wiki/Specifikacija-softverskih-zahtjeva-za-Softver-za-osobnu-telemedicinu)
-
-## [Dokumentacija](https://github.com/foivz/pi2024-zadace-MarkoSokser/tree/master/Documentation) 
+### [Dokumentacija](https://github.com/foivz/pi2024-zadace-MarkoSokser/tree/master/Documentation) 
 
 
 Svi resursi nalaze se u mapi _Documentation_.
