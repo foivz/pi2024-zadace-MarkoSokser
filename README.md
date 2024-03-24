@@ -36,12 +36,11 @@ Budući korisnici softverskog rješenja MyDoc očekuju od softvera sljedeće mog
 9. Mogućnost odabira edukativnog sadržaja o zdravlju i prevenciji bolesti
 
 ## Zadatak
-(U root repozitorija učitajte zadatak koji ste dobili i potom ovdje stavite link na njegovo otvaranje!)
 
-https://github.com/foivz/pi2024-zadace-MarkoSokser/wiki/Specifikacija-softverskih-zahtjeva-za-Softver-za-osobnu-telemedicinu
+## [Zadatak](https://github.com/foivz/pi2024-zadace-MarkoSokser/wiki/Specifikacija-softverskih-zahtjeva-za-Softver-za-osobnu-telemedicinu)
 
 ## Resursi
-(Zadaće je obvezno predati u obliku Wiki stranica na ovom repozitoriju. Slike i druge artefakte koje ćete koristiti na wiki stranicama smjestite u mapu dokumentacije u repozitoriju!)
+
 
 ## [Wiki stranica](https://github.com/foivz/pi2024-zadace-MarkoSokser/wiki/Specifikacija-softverskih-zahtjeva-za-Softver-za-osobnu-telemedicinu)
 
