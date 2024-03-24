@@ -43,8 +43,9 @@ https://github.com/foivz/pi2024-zadace-MarkoSokser/wiki/Specifikacija-softverski
 ## Resursi
 (Zadaće je obvezno predati u obliku Wiki stranica na ovom repozitoriju. Slike i druge artefakte koje ćete koristiti na wiki stranicama smjestite u mapu dokumentacije u repozitoriju!)
 
-https://github.com/foivz/pi2024-zadace-MarkoSokser/wiki/Specifikacija-softverskih-zahtjeva-za-Softver-za-osobnu-telemedicinu
+## [Wiki stranica](https://github.com/foivz/pi2024-zadace-MarkoSokser/wiki/Specifikacija-softverskih-zahtjeva-za-Softver-za-osobnu-telemedicinu)
 
-https://github.com/foivz/pi2024-zadace-MarkoSokser/tree/master/Documentation
+## [Dokumentacija](https://github.com/foivz/pi2024-zadace-MarkoSokser/tree/master/Documentation) 
+
 
 Svi resursi nalaze se u mapi _Documentation_.
