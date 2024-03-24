@@ -37,7 +37,7 @@ Budući korisnici softverskog rješenja MyDoc očekuju od softvera sljedeće mog
 
 ## Zadatak
 
-### [ Documentation/Korisnički zahtjevi - Softver za osobnu telemedicinu.pdf](https://elf.foi.hr/mod/resource/view.php?id=123452)
+### [Softver za osobnu telemedicinu.pdf](https://elf.foi.hr/mod/resource/view.php?id=123452)
 
 ## Resursi
 
