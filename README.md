@@ -45,4 +45,6 @@ https://github.com/foivz/pi2024-zadace-MarkoSokser/wiki/Specifikacija-softverski
 
 https://github.com/foivz/pi2024-zadace-MarkoSokser/wiki/Specifikacija-softverskih-zahtjeva-za-Softver-za-osobnu-telemedicinu
 
+https://github.com/foivz/pi2024-zadace-MarkoSokser/tree/master/Documentation
+
 Svi resursi nalaze se u mapi _Documentation_.
