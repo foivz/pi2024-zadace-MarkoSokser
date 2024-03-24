@@ -25,15 +25,15 @@ Domena koju pokriva moja projektna zadaća je problem pružanja telemedicinskih 
 ## Specifikacija projekta
 Budući korisnici softverskog rješenja MyDoc očekuju od softvera sljedeće mogućnosti:
 
-Pregled i zakazivanje termina
-Telemedicinski pregledi
-Mobilno vađenje krvi
-Pregled rezultata i nalaza
-Upućivanje na specijalističke preglede
-Komunikacija s liječnicima
-Odabir pogodnih paketa s određenim popustima
-Dostupnost svih informacija na hrvatskom i engleskom jeziku
-Mogućnost odabira edukativnog sadržaja o zdravlju i prevenciji bolesti
+1. Pregled i zakazivanje termina
+2. Telemedicinski pregledi
+3. Mobilno vađenje krvi
+4. Pregled rezultata i nalaza
+5. Upućivanje na specijalističke preglede
+6. Komunikacija s liječnicima
+7. Odabir pogodnih paketa s određenim popustima
+8. Dostupnost svih informacija na hrvatskom i engleskom jeziku
+9. Mogućnost odabira edukativnog sadržaja o zdravlju i prevenciji bolesti
 
 ## Zadatak
 (U root repozitorija učitajte zadatak koji ste dobili i potom ovdje stavite link na njegovo otvaranje!)
