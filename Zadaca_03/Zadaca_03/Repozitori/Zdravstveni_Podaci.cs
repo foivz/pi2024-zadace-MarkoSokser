@@ -5,7 +5,12 @@ using Zadaca_03.Modeli;
 
 namespace Zadaca_03.Repozitori
 {
-    public class StudentRepozitori
+    public static class DB
+    {
+        public static string ConnectionString { get; } = "Server=31.147.206.65;Database=PI2324_msokser22_DB;User Id=PI2324_msokser22_User;Password=$khO:dz&;";
+    }
+
+    public class Zdravstveni_Podaci
     {
         public static Student GetStudent(int id)
         {
@@ -65,7 +70,7 @@ namespace Zadaca_03.Repozitori
                 Id = id,
                 FirstName = firstName,
                 LastName = lastName,
-                Grade = grade
+                Student_ID = grade
             };
 
             return student;

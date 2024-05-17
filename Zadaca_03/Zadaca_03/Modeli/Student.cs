@@ -8,7 +8,7 @@ namespace Zadaca_03.Modeli
 {
     public class Student : Person
     {
-        public int Grade { get; set; }
+        public int Student_ID { get; set; }
     }
 }
 
