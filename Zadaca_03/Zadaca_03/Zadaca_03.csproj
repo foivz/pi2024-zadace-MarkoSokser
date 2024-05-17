@@ -52,8 +52,7 @@
     <Compile Include="Konfiguracija_podataka.Designer.cs">
       <DependentUpon>Konfiguracija_podataka.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modeli\Osoba.cs" />
-    <Compile Include="Modeli\Student.cs" />
+    <Compile Include="Modeli\Podaci_o_zdravlju.cs" />
     <Compile Include="Osobni_zdravtsveni_podaci.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,9 +86,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Dlls\DBLayer.dll" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

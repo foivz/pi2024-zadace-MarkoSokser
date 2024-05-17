@@ -46,5 +46,10 @@ namespace Zadaca_03
         {
 
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

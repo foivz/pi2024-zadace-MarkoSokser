@@ -12,11 +12,11 @@ namespace Zadaca_03.Repozitori
 
     public class Zdravstveni_Podaci
     {
-        public static Student GetStudent(int id)
+        public static ZdravstveniPodaci GetZdravstveniPodaci(int id)
         {
-            Student student = null;
+            ZdravstveniPodaci podaci = null;
 
-            string sql = "SELECT * FROM Students WHERE Id = @Id";
+            string sql = "SELECT * FROM Zdravstveni_podaci WHERE ID_podataka = @Id";
             using (SqlConnection connection = new SqlConnection(DB.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(sql, connection))
@@ -27,19 +27,19 @@ namespace Zadaca_03.Repozitori
                     {
                         if (reader.Read())
                         {
-                            student = CreateObject(reader);
+                            podaci = CreateObject(reader);
                         }
                     }
                 }
             }
-            return student;
+            return podaci;
         }
 
-        public static List<Student> GetStudents()
+        public static List<ZdravstveniPodaci> GetZdravstveniPodaci()
         {
-            var students = new List<Student>();
+            var podaciList = new List<ZdravstveniPodaci>();
 
-            string sql = "SELECT * FROM Students";
+            string sql = "SELECT * FROM Zdravstveni_podaci";
             using (SqlConnection connection = new SqlConnection(DB.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(sql, connection))
@@ -49,31 +49,43 @@ namespace Zadaca_03.Repozitori
                     {
                         while (reader.Read())
                         {
-                            Student student = CreateObject(reader);
-                            students.Add(student);
+                            ZdravstveniPodaci podaci = CreateObject(reader);
+                            podaciList.Add(podaci);
                         }
                     }
                 }
             }
-            return students;
+            return podaciList;
         }
 
-        private static Student CreateObject(SqlDataReader reader)
+        private static ZdravstveniPodaci CreateObject(SqlDataReader reader)
         {
-            int id = reader["Id"] != DBNull.Value ? int.Parse(reader["Id"].ToString()) : 0;
-            string firstName = reader["FirstName"].ToString();
-            string lastName = reader["LastName"].ToString();
-            int grade = reader["Grade"] != DBNull.Value ? int.Parse(reader["Grade"].ToString()) : 0;
+            int id = reader["ID_podataka"] != DBNull.Value ? int.Parse(reader["ID_podataka"].ToString()) : 0;
+            string opisSimtoma = reader["Opis_simtoma"].ToString();
+            string rezultatiKrvnePretrage = reader["Rezultati_krvne_pretrage"].ToString();
+            string informacijeOalergiji = reader["Informacije_o_alergiji"].ToString();
+            string popisPrepisanihLijekova = reader["Popis_prepisanih_lijekova"].ToString();
+            string napomeneLiječnika = reader["Napomene_liječnika"].ToString();
+            string dijagnoza = reader["Dijagnoza"].ToString();
+            string planLiječenja = reader["Plan_liječenja"].ToString();
+            string osobneBilješke = reader["Osobne_bilješke"].ToString();
+            DateTime? termin = reader["Termin"] != DBNull.Value ? (DateTime?)reader["Termin"] : null;
 
-            var student = new Student
+            var podaci = new ZdravstveniPodaci
             {
-                Id = id,
-                FirstName = firstName,
-                LastName = lastName,
-                Student_ID = grade
+                ID_podataka = id,
+                Opis_simtoma = opisSimtoma,
+                Rezultati_krvne_pretrage = rezultatiKrvnePretrage,
+                Informacije_o_alergiji = informacijeOalergiji,
+                Popis_prepisanih_lijekova = popisPrepisanihLijekova,
+                Napomene_liječnika = napomeneLiječnika,
+                Dijagnoza = dijagnoza,
+                Plan_liječenja = planLiječenja,
+                Osobne_bilješke = osobneBilješke,
+                Termin = termin
             };
 
-            return student;
+            return podaci;
         }
     }
 }
