@@ -8,3 +8,4 @@ C:\Users\38599\source\foivz\pi2024-zadace-MarkoSokser\Zadaca_03\Zadaca_03\obj\De
 C:\Users\38599\source\foivz\pi2024-zadace-MarkoSokser\Zadaca_03\Zadaca_03\obj\Debug\Zadaca_03.csproj.CoreCompileInputs.cache
 C:\Users\38599\source\foivz\pi2024-zadace-MarkoSokser\Zadaca_03\Zadaca_03\obj\Debug\Zadaca_03.exe
 C:\Users\38599\source\foivz\pi2024-zadace-MarkoSokser\Zadaca_03\Zadaca_03\obj\Debug\Zadaca_03.pdb
+C:\Users\38599\source\foivz\pi2024-zadace-MarkoSokser\Zadaca_03\Zadaca_03\obj\Debug\Zadaca_03.Manipulacija_podataka.resources

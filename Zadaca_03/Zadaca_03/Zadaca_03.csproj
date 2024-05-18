@@ -46,24 +46,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Konfiguracija_podataka.cs">
+    <Compile Include="Manipulacija_podataka.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Konfiguracija_podataka.Designer.cs">
-      <DependentUpon>Konfiguracija_podataka.cs</DependentUpon>
+    <Compile Include="Manipulacija_podataka.Designer.cs">
+      <DependentUpon>Manipulacija_podataka.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modeli\Podaci_o_zdravlju.cs" />
-    <Compile Include="Osobni_zdravtsveni_podaci.cs">
+    <Compile Include="Osobni_zdravstveni_podaci.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Osobni_zdravtsveni_podaci.Designer.cs">
-      <DependentUpon>Osobni_zdravtsveni_podaci.cs</DependentUpon>
+    <Compile Include="Osobni_zdravstveni_podaci.Designer.cs">
+      <DependentUpon>Osobni_zdravstveni_podaci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modeli\Podaci_o_zdravlju_Korisnika.cs" />
+    <Compile Include="PI2324_msokser22_DBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PI2324_msokser22_DBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repozitori\Zdravstveni_Podaci.cs" />
-    <EmbeddedResource Include="Osobni_zdravtsveni_podaci.resx">
-      <DependentUpon>Osobni_zdravtsveni_podaci.cs</DependentUpon>
+    <EmbeddedResource Include="Manipulacija_podataka.resx">
+      <DependentUpon>Manipulacija_podataka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Osobni_zdravstveni_podaci.resx">
+      <DependentUpon>Osobni_zdravstveni_podaci.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -74,6 +82,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="PI2324_msokser22_DBDataSet.xsc">
+      <DependentUpon>PI2324_msokser22_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PI2324_msokser22_DBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PI2324_msokser22_DBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PI2324_msokser22_DBDataSet.xss">
+      <DependentUpon>PI2324_msokser22_DBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -87,6 +106,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
