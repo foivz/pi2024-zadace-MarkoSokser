@@ -12,16 +12,30 @@ namespace Zadaca_03
 {
     public partial class Osobni_zdravstveni_podaci : Form
     {
+        public static IEnumerable<DataGridViewColumn> Columns { get; private set; }
+
         public Osobni_zdravstveni_podaci()
         {
             InitializeComponent();
         }
+
+        private DataGridViewCell zadnjeObrisanaCelija = null;
+        private string zadnjeObrisanaVrijednost = null;
 
         private void Form1_Load(object sender, EventArgs e)
         {
             Zdravstveni_podaci.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
            
             this.zdravstveni_podaciTableAdapter.Fill(this.pI2324_msokser22_DBDataSet.Zdravstveni_podaci);
+            Pretraga.Items.AddRange(new string[] { "Pretraga", 
+        "Opis simtoma", "Rezultati krvne pretrage", "Informacije o alergiji",
+        "Popis prepisanih lijekova", "Napomene liječnika", "Dijagnoza",
+        "Plan liječenja", "Osobne bilješke", "Termin"
+    });
+            // Event handler za gumb Obriši
+            Obriši.Click += Obriši_Click;
+
+           
 
         }
 
@@ -29,10 +43,119 @@ namespace Zadaca_03
         {
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void Pretraga_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            {
+                if (Pretraga.SelectedItem != null)
+                {
+                    string odabraniNazivStupca = Pretraga.SelectedItem.ToString();
 
+                    if (odabraniNazivStupca == "Pretraga")
+                    {
+                        // Prikaži sve stupce i vrati ih na prvobitni redoslijed
+                        foreach (DataGridViewColumn stupac in Zdravstveni_podaci.Columns)
+                        {
+                            stupac.Visible = true;
+                        }
+                        MessageBox.Show("Prikazani su svi stupci.", "Informacija", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        DataGridViewColumn odabraniStupac = null;
+                        foreach (DataGridViewColumn stupac in Zdravstveni_podaci.Columns)
+                        {
+                            if (stupac.HeaderText == odabraniNazivStupca || stupac.DataPropertyName == odabraniNazivStupca)
+                            {
+                                odabraniStupac = stupac;
+                                break;
+                            }
+                        }
+
+                        if (odabraniStupac != null)
+                        {
+                            // Prvo postavi redoslijed odabranog stupca na 0 (prvi stupac)
+                            odabraniStupac.DisplayIndex = 0;
+
+                            // Sakrij sve ostale stupce
+                            foreach (DataGridViewColumn stupac in Zdravstveni_podaci.Columns)
+                            {
+                                stupac.Visible = (stupac == odabraniStupac);
+                            }
+
+                            // Osiguraj da je odabrani stupac vidljiv
+                            odabraniStupac.Visible = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Odabrani stupac ne postoji.", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Molimo odaberite stupac za pretragu.", "Informacija", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Došlo je do greške: " + ex.Message, "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+
+        private void Dodaj_Click(object sender, EventArgs e)
+        {
+            Manipulacija_podataka manipulacijaPodatakaForma = new Manipulacija_podataka();
+            manipulacijaPodatakaForma.Show();
+
+        }
+
+        private void Promjeni_Click(object sender, EventArgs e)
+        {
+            Manipulacija_podataka manipulacijaPodatakaForma = new Manipulacija_podataka();
+            manipulacijaPodatakaForma.Show();
+        }
+
+        private void Obriši_Click(object sender, EventArgs e)
+        {
+            if (Zdravstveni_podaci.CurrentCell != null)
+            {
+                var trenutnaCelija = Zdravstveni_podaci.CurrentCell;
+
+                if (trenutnaCelija.OwningColumn.HeaderText == "Osobne bilješke" )
+                {
+                    // Spremi trenutne podatke za vraćanje
+                    zadnjeObrisanaCelija = trenutnaCelija;
+                    zadnjeObrisanaVrijednost = trenutnaCelija.Value?.ToString();
+
+                    // Obrisi podatke iz ćelije
+                    trenutnaCelija.Value = null;
+                }
+                else
+                {
+                    MessageBox.Show("Možete brisati samo podatke u stupcima 'Osobne bilješke' .", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        private void Poništi_brisanje_Click(object sender, EventArgs e)
+        {
+            if (zadnjeObrisanaCelija != null && zadnjeObrisanaVrijednost != null)
+            {
+                // Vrati obrisane podatke u ćeliju
+                zadnjeObrisanaCelija.Value = zadnjeObrisanaVrijednost;
+
+                // Resetiraj spremljene podatke
+                zadnjeObrisanaCelija = null;
+                zadnjeObrisanaVrijednost = null;
+            }
+            else
+            {
+                MessageBox.Show("Nema podataka za vraćanje.", "Informacija", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
