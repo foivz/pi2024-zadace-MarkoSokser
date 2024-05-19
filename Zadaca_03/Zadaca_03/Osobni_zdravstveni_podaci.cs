@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -119,43 +120,79 @@ namespace Zadaca_03
             manipulacijaPodatakaForma.Show();
         }
 
+
+        private int zadnjiObrisaniRedIndex = -1;
+        private string zadnjeObrisanoPolje = null;
+
+
+
+
         private void Obriši_Click(object sender, EventArgs e)
         {
             if (Zdravstveni_podaci.CurrentCell != null)
             {
                 var trenutnaCelija = Zdravstveni_podaci.CurrentCell;
 
-                if (trenutnaCelija.OwningColumn.HeaderText == "Osobne bilješke" )
+                if (trenutnaCelija.OwningColumn.HeaderText == "Osobne bilješke")
                 {
-                    // Spremi trenutne podatke za vraćanje
-                    zadnjeObrisanaCelija = trenutnaCelija;
-                    zadnjeObrisanaVrijednost = trenutnaCelija.Value?.ToString();
+                    // Spremi identifikator reda i sadržaj ćelije za brisanje
+                    zadnjiObrisaniRedIndex = trenutnaCelija.RowIndex;
+                    zadnjeObrisanoPolje = trenutnaCelija.Value?.ToString();
 
                     // Obrisi podatke iz ćelije
                     trenutnaCelija.Value = null;
                 }
                 else
                 {
-                    MessageBox.Show("Možete brisati samo podatke u stupcima 'Osobne bilješke' .", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Možete brisati samo podatke u stupcima 'Osobne bilješke'.", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
 
-        private void Poništi_brisanje_Click(object sender, EventArgs e)
-        {
-            if (zadnjeObrisanaCelija != null && zadnjeObrisanaVrijednost != null)
-            {
-                // Vrati obrisane podatke u ćeliju
-                zadnjeObrisanaCelija.Value = zadnjeObrisanaVrijednost;
 
-                // Resetiraj spremljene podatke
-                zadnjeObrisanaCelija = null;
-                zadnjeObrisanaVrijednost = null;
-            }
-            else
+
+        private void Spremi_Click(object sender, EventArgs e)
+        {
+            try
             {
-                MessageBox.Show("Nema podataka za vraćanje.", "Informacija", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (zadnjiObrisaniRedIndex != -1 && zadnjeObrisanoPolje != null)
+                {
+                    int idRedaZaBrisanje = (int)Zdravstveni_podaci.Rows[zadnjiObrisaniRedIndex].Cells["ID"].Value;
+
+                    using (var conn = new SqlConnection("connection_string"))
+                    {
+                        conn.Open();
+                        string sql = "DELETE FROM Zdravstveni_podaci WHERE ID = @ID";
+
+                        using (var cmd = new SqlCommand(sql, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@ID", idRedaZaBrisanje);
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+
+                    // Ovdje možete ukloniti redak iz DataSource-a ako je primjenjivo
+                    Zdravstveni_podaci.Rows.RemoveAt(zadnjiObrisaniRedIndex);
+
+                    zadnjiObrisaniRedIndex = -1;
+                    zadnjeObrisanoPolje = null;
+
+                    MessageBox.Show("Promjena uspješno pohranjena.", "Informacija", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Nema promjena za spremanje.", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Došlo je do greške prilikom spremanja promjena: " + ex.Message, "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Došlo je do nepredviđene greške prilikom spremanja promjena: " + ex.Message, "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

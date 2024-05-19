@@ -10,8 +10,11 @@ using System.Windows.Forms;
 
 namespace Zadaca_03
 {
+
     public partial class Manipulacija_podataka : Form
     {
+       
+
         public Manipulacija_podataka()
         {
             InitializeComponent();
@@ -65,6 +68,8 @@ namespace Zadaca_03
             this.Close();
         }
 
+
+
         private void Pohrani_Click(object sender, EventArgs e)
         {
 
@@ -72,11 +77,10 @@ namespace Zadaca_03
 
         private void Dodaj_Click(object sender, EventArgs e)
         {
-
-            
+           
         }
 
-  
+
     }
 }
 

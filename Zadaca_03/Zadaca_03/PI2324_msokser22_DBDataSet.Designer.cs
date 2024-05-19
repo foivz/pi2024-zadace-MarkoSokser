@@ -10,6 +10,8 @@
 
 #pragma warning disable 1591
 
+using System;
+
 namespace Zadaca_03 {
     
     
@@ -644,6 +646,11 @@ namespace Zadaca_03 {
                 xs.Add(dsSchema);
                 return type;
             }
+
+            internal object FindByidZdravstveniPodaci(int id)
+            {
+                throw new NotImplementedException();
+            }
         }
         
         /// <summary>
@@ -1006,6 +1013,11 @@ namespace Zadaca_03.PI2324_msokser22_DBDataSetTableAdapters {
             PI2324_msokser22_DBDataSet.Zdravstveni_podaciDataTable dataTable = new PI2324_msokser22_DBDataSet.Zdravstveni_podaciDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+
+        internal void Update(PI2324_msokser22_DBDataSet.Zdravstveni_podaciDataTable zdravstveniPodaciDataTable)
+        {
+            throw new NotImplementedException();
         }
     }
     

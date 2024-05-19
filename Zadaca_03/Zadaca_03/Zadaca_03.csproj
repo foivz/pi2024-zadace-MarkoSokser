@@ -67,6 +67,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repozitori\Promjena_podataka.cs" />
     <Compile Include="Repozitori\Zdravstveni_Podaci.cs" />
     <EmbeddedResource Include="Manipulacija_podataka.resx">
       <DependentUpon>Manipulacija_podataka.cs</DependentUpon>

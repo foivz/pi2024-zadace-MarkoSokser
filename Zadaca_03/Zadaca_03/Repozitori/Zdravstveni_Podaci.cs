@@ -1,91 +1,87 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using Zadaca_03.Modeli;
+using Zadaca_03.PI2324_msokser22_DBDataSetTableAdapters;
 
 namespace Zadaca_03.Repozitori
 {
-    public static class DB
+    public class OsobniZdravstveniPodaciModel
     {
-        public static string ConnectionString { get; } = "Server=31.147.206.65;Database=PI2324_msokser22_DB;User Id=PI2324_msokser22_User;Password=$khO:dz&;";
-    }
+        private Zdravstveni_podaciTableAdapter zdravstveniPodaciTableAdapter;
+        private PI2324_msokser22_DBDataSet.Zdravstveni_podaciDataTable zdravstveniPodaciDataTable;
 
-    public class Zdravstveni_Podaci
-    {
-        public static ZdravstveniPodaci GetZdravstveniPodaci(int id)
+        public OsobniZdravstveniPodaciModel()
         {
-            ZdravstveniPodaci podaci = null;
+            zdravstveniPodaciTableAdapter = new Zdravstveni_podaciTableAdapter();
+            zdravstveniPodaciDataTable = new PI2324_msokser22_DBDataSet.Zdravstveni_podaciDataTable();
+            UcitajPodatke();
+        }
 
-            string sql = "SELECT * FROM Zdravstveni_podaci WHERE ID_podataka = @Id";
-            using (SqlConnection connection = new SqlConnection(DB.ConnectionString))
+        public void UcitajPodatke()
+        {
+            try
             {
-                using (SqlCommand command = new SqlCommand(sql, connection))
+                zdravstveniPodaciTableAdapter.Fill(zdravstveniPodaciDataTable);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Greška prilikom učitavanja podataka.", ex);
+            }
+        }
+
+        public DataTable DohvatiPodatke()
+        {
+            return zdravstveniPodaciDataTable;
+        }
+
+        public void ObrisiPodatak(int id)
+        {
+            try
+            {
+                // Brisanje iz DataTable-a
+                var redakZaBrisanje = zdravstveniPodaciDataTable.FindByidZdravstveniPodaci(id);
+                if (redakZaBrisanje != null)
                 {
-                    command.Parameters.AddWithValue("@Id", id);
+                    redakZaBrisanje.Delete();
+                }
+
+                // Brisanje iz baze podataka
+                using (var connection = new SqlConnection("YOUR_CONNECTION_STRING")) // Zamijeni s tvojom connection stringom
+                {
                     connection.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    using (var command = new SqlCommand("DELETE FROM Zdravstveni_podaci WHERE idZdravstveniPodaci = @ID", connection))
                     {
-                        if (reader.Read())
-                        {
-                            podaci = CreateObject(reader);
-                        }
+                        command.Parameters.AddWithValue("@ID", id);
+                        command.ExecuteNonQuery();
                     }
                 }
             }
-            return podaci;
-        }
-
-        public static List<ZdravstveniPodaci> GetZdravstveniPodaci()
-        {
-            var podaciList = new List<ZdravstveniPodaci>();
-
-            string sql = "SELECT * FROM Zdravstveni_podaci";
-            using (SqlConnection connection = new SqlConnection(DB.ConnectionString))
+            catch (Exception ex)
             {
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    connection.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            ZdravstveniPodaci podaci = CreateObject(reader);
-                            podaciList.Add(podaci);
-                        }
-                    }
-                }
+                throw new Exception("Greška prilikom brisanja podataka.", ex);
             }
-            return podaciList;
         }
 
-        private static ZdravstveniPodaci CreateObject(SqlDataReader reader)
+        public void PohraniPromjene()
         {
-            int id = reader["ID_podataka"] != DBNull.Value ? int.Parse(reader["ID_podataka"].ToString()) : 0;
-            string opisSimtoma = reader["Opis_simtoma"].ToString();
-            string rezultatiKrvnePretrage = reader["Rezultati_krvne_pretrage"].ToString();
-            string informacijeOalergiji = reader["Informacije_o_alergiji"].ToString();
-            string popisPrepisanihLijekova = reader["Popis_prepisanih_lijekova"].ToString();
-            string napomeneLiječnika = reader["Napomene_liječnika"].ToString();
-            string dijagnoza = reader["Dijagnoza"].ToString();
-            string planLiječenja = reader["Plan_liječenja"].ToString();
-            string osobneBilješke = reader["Osobne_bilješke"].ToString();
-            DateTime? termin = reader["Termin"] != DBNull.Value ? (DateTime?)reader["Termin"] : null;
-
-            var podaci = new ZdravstveniPodaci
+            try
             {
-                ID_podataka = id,
-                Opis_simtoma = opisSimtoma,
-                Rezultati_krvne_pretrage = rezultatiKrvnePretrage,
-                Informacije_o_alergiji = informacijeOalergiji,
-                Popis_prepisanih_lijekova = popisPrepisanihLijekova,
-                Napomene_liječnika = napomeneLiječnika,
-                Dijagnoza = dijagnoza,
-                Plan_liječenja = planLiječenja,
-                Osobne_bilješke = osobneBilješke,
-                Termin = termin
-            };
+                zdravstveniPodaciTableAdapter.Update(zdravstveniPodaciDataTable);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Greška prilikom pohranjivanja podataka.", ex);
+            }
+        }
 
-            return podaci;
+        public List<string> DohvatiNazivaStupaca()
+        {
+            return zdravstveniPodaciDataTable.Columns.Cast<DataColumn>()
+                .Select(column => column.ColumnName) // Ili column.Caption za prikazni naziv
+                .ToList();
         }
     }
 }
