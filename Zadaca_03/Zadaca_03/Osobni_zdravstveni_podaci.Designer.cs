@@ -57,6 +57,7 @@
             this.Pretraga = new System.Windows.Forms.ComboBox();
             this.zdravstveni_podaciTableAdapter = new Zadaca_03.PI2324_msokser22_DBDataSetTableAdapters.Zdravstveni_podaciTableAdapter();
             this.Vrati = new System.Windows.Forms.Button();
+            this.Spremi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Zdravstveni_podaci)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zdravstvenipodaciBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pI2324_msokser22_DBDataSet)).BeginInit();
@@ -271,12 +272,22 @@
             this.Vrati.Size = new System.Drawing.Size(75, 23);
             this.Vrati.TabIndex = 0;
             // 
+            // Spremi
+            // 
+            this.Spremi.Location = new System.Drawing.Point(1140, 379);
+            this.Spremi.Name = "Spremi";
+            this.Spremi.Size = new System.Drawing.Size(75, 23);
+            this.Spremi.TabIndex = 6;
+            this.Spremi.Text = "Spremi";
+            this.Spremi.UseVisualStyleBackColor = true;
+            // 
             // Osobni_zdravstveni_podaci
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1372, 651);
+            this.Controls.Add(this.Spremi);
             this.Controls.Add(this.Pretraga);
             this.Controls.Add(this.Promjeni);
             this.Controls.Add(this.Dodaj);
@@ -312,5 +323,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn osobnebilješkeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn terminDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button Vrati;
+        private System.Windows.Forms.Button Spremi;
     }
 }
