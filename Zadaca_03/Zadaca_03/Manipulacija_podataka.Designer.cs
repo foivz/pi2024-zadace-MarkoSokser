@@ -29,23 +29,25 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.osobnebilješkeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.terminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zdravstvenipodaciBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pI2324_msokser22_DBDataSet = new Zadaca_03.PI2324_msokser22_DBDataSet();
+            this.pI2324_msokser22_DBDataSet = new Zadaca_03.PI2324_msokser22_DBDataSet2();
             this.Promjeni = new System.Windows.Forms.Button();
             this.Dodaj = new System.Windows.Forms.Button();
             this.pI2324msokser22DBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.zdravstveni_podaciTableAdapter = new Zadaca_03.PI2324_msokser22_DBDataSetTableAdapters.Zdravstveni_podaciTableAdapter();
+            this.zdravstveni_podaciTableAdapter = new Zadaca_03.PI2324_msokser22_DBDataSet2TableAdapters.Zdravstveni_podaciTableAdapter();
             this.Odustani = new System.Windows.Forms.Button();
             this.Pohrani = new System.Windows.Forms.Button();
+            this.pI2324msokser22DBDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zdravstvenipodaciBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pI2324_msokser22_DBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pI2324msokser22DBDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pI2324msokser22DBDataSetBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -68,9 +70,9 @@
             // 
             this.osobnebilješkeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.osobnebilješkeDataGridViewTextBoxColumn.DataPropertyName = "Osobne_bilješke";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.osobnebilješkeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.osobnebilješkeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.osobnebilješkeDataGridViewTextBoxColumn.HeaderText = "Osobne bilješke";
             this.osobnebilješkeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.osobnebilješkeDataGridViewTextBoxColumn.Name = "osobnebilješkeDataGridViewTextBoxColumn";
@@ -81,9 +83,9 @@
             // 
             this.terminDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.terminDataGridViewTextBoxColumn.DataPropertyName = "Termin";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.terminDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.terminDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.terminDataGridViewTextBoxColumn.HeaderText = "Termin";
             this.terminDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.terminDataGridViewTextBoxColumn.Name = "terminDataGridViewTextBoxColumn";
@@ -149,6 +151,11 @@
             this.Pohrani.UseVisualStyleBackColor = true;
             this.Pohrani.Click += new System.EventHandler(this.Pohrani_Click);
             // 
+            // pI2324msokser22DBDataSetBindingSource1
+            // 
+            this.pI2324msokser22DBDataSetBindingSource1.DataSource = this.pI2324_msokser22_DBDataSet;
+            this.pI2324msokser22DBDataSetBindingSource1.Position = 0;
+            // 
             // Manipulacija_podataka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -166,6 +173,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.zdravstvenipodaciBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pI2324_msokser22_DBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pI2324msokser22DBDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pI2324msokser22DBDataSetBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -176,12 +184,13 @@
         private System.Windows.Forms.Button Promjeni;
         private System.Windows.Forms.Button Dodaj;
         private System.Windows.Forms.BindingSource pI2324msokser22DBDataSetBindingSource;
-        private PI2324_msokser22_DBDataSet pI2324_msokser22_DBDataSet;
+        private PI2324_msokser22_DBDataSet2 pI2324_msokser22_DBDataSet;
         private System.Windows.Forms.BindingSource zdravstvenipodaciBindingSource;
-        private PI2324_msokser22_DBDataSetTableAdapters.Zdravstveni_podaciTableAdapter zdravstveni_podaciTableAdapter;
+        private PI2324_msokser22_DBDataSet2TableAdapters.Zdravstveni_podaciTableAdapter zdravstveni_podaciTableAdapter;
         private System.Windows.Forms.Button Odustani;
         private System.Windows.Forms.DataGridViewTextBoxColumn osobnebilješkeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn terminDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button Pohrani;
+        private System.Windows.Forms.BindingSource pI2324msokser22DBDataSetBindingSource1;
     }
 }

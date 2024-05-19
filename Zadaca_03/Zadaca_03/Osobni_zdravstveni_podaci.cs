@@ -25,9 +25,13 @@ namespace Zadaca_03
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'pI2324_msokser22_DBDataSet2.Zdravstveni_podaci' table. You can move, or remove it, as needed.
+            this.zdravstveni_podaciTableAdapter2.Fill(this.pI2324_msokser22_DBDataSet2.Zdravstveni_podaci);
+           
+           
             Zdravstveni_podaci.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
            
-            this.zdravstveni_podaciTableAdapter.Fill(this.pI2324_msokser22_DBDataSet.Zdravstveni_podaci);
+            this.zdravstveni_podaciTableAdapter2.Fill(this.pI2324_msokser22_DBDataSet2.Zdravstveni_podaci);
             Pretraga.Items.AddRange(new string[] { "Pretraga", 
         "Opis simtoma", "Rezultati krvne pretrage", "Informacije o alergiji",
         "Popis prepisanih lijekova", "Napomene liječnika", "Dijagnoza",
@@ -157,12 +161,13 @@ namespace Zadaca_03
             {
                 if (zadnjiObrisaniRedIndex != -1 && zadnjeObrisanoPolje != null)
                 {
-                    int idRedaZaBrisanje = (int)Zdravstveni_podaci.Rows[zadnjiObrisaniRedIndex].Cells["ID"].Value;
+                    // Ispravljen naziv stupca
+                    int idRedaZaBrisanje = (int)Zdravstveni_podaci.Rows[zadnjiObrisaniRedIndex].Cells["ID_podataka"].Value; // Ili naziv stupca u bazi podataka koji predstavlja primarni ključ
 
-                    using (var conn = new SqlConnection("connection_string"))
+                    using (var conn = new SqlConnection("Data Source=31.147.206.65;Initial Catalog=P12324_msokser22_DB;User ID=PI2324_msokser22_User;Password=$kho:dz&;"))  // Zamijeni s tvojom connection stringom
                     {
                         conn.Open();
-                        string sql = "DELETE FROM Zdravstveni_podaci WHERE ID = @ID";
+                        string sql = "DELETE FROM Zdravstveni_podaci WHERE ID_podataka = @ID"; // Ispravljen naziv stupca
 
                         using (var cmd = new SqlCommand(sql, conn))
                         {
@@ -171,9 +176,7 @@ namespace Zadaca_03
                         }
                     }
 
-                    // Ovdje možete ukloniti redak iz DataSource-a ako je primjenjivo
                     Zdravstveni_podaci.Rows.RemoveAt(zadnjiObrisaniRedIndex);
-
                     zadnjiObrisaniRedIndex = -1;
                     zadnjeObrisanoPolje = null;
 
@@ -193,6 +196,5 @@ namespace Zadaca_03
                 MessageBox.Show("Došlo je do nepredviđene greške prilikom spremanja promjena: " + ex.Message, "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
     }
 }

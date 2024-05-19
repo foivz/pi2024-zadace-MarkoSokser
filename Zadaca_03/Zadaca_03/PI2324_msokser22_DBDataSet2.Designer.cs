@@ -10,8 +10,6 @@
 
 #pragma warning disable 1591
 
-using System;
-
 namespace Zadaca_03 {
     
     
@@ -22,9 +20,9 @@ namespace Zadaca_03 {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("PI2324_msokser22_DBDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("PI2324_msokser22_DBDataSet2")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class PI2324_msokser22_DBDataSet : global::System.Data.DataSet {
+    public partial class PI2324_msokser22_DBDataSet2 : global::System.Data.DataSet {
         
         private Zdravstveni_podaciDataTable tableZdravstveni_podaci;
         
@@ -32,7 +30,7 @@ namespace Zadaca_03 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public PI2324_msokser22_DBDataSet() {
+        public PI2324_msokser22_DBDataSet2() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -43,7 +41,7 @@ namespace Zadaca_03 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected PI2324_msokser22_DBDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected PI2324_msokser22_DBDataSet2(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -129,7 +127,7 @@ namespace Zadaca_03 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            PI2324_msokser22_DBDataSet cln = ((PI2324_msokser22_DBDataSet)(base.Clone()));
+            PI2324_msokser22_DBDataSet2 cln = ((PI2324_msokser22_DBDataSet2)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -201,9 +199,9 @@ namespace Zadaca_03 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "PI2324_msokser22_DBDataSet";
+            this.DataSetName = "PI2324_msokser22_DBDataSet2";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/PI2324_msokser22_DBDataSet.xsd";
+            this.Namespace = "http://tempuri.org/PI2324_msokser22_DBDataSet2.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableZdravstveni_podaci = new Zdravstveni_podaciDataTable();
@@ -227,7 +225,7 @@ namespace Zadaca_03 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            PI2324_msokser22_DBDataSet ds = new PI2324_msokser22_DBDataSet();
+            PI2324_msokser22_DBDataSet2 ds = new PI2324_msokser22_DBDataSet2();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -281,6 +279,8 @@ namespace Zadaca_03 {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class Zdravstveni_podaciDataTable : global::System.Data.TypedTableBase<Zdravstveni_podaciRow> {
             
+            private global::System.Data.DataColumn columnID_podataka;
+            
             private global::System.Data.DataColumn columnOpis_simtoma;
             
             private global::System.Data.DataColumn columnRezultati_krvne_pretrage;
@@ -330,6 +330,14 @@ namespace Zadaca_03 {
             protected Zdravstveni_podaciDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ID_podatakaColumn {
+                get {
+                    return this.columnID_podataka;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -441,9 +449,10 @@ namespace Zadaca_03 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Zdravstveni_podaciRow AddZdravstveni_podaciRow(string Opis_simtoma, string Rezultati_krvne_pretrage, string Informacije_o_alergiji, string Popis_prepisanih_lijekova, string Napomene_liječnika, string Dijagnoza, string Plan_liječenja, string Osobne_bilješke, System.DateTime Termin) {
+            public Zdravstveni_podaciRow AddZdravstveni_podaciRow(int ID_podataka, string Opis_simtoma, string Rezultati_krvne_pretrage, string Informacije_o_alergiji, string Popis_prepisanih_lijekova, string Napomene_liječnika, string Dijagnoza, string Plan_liječenja, string Osobne_bilješke, System.DateTime Termin) {
                 Zdravstveni_podaciRow rowZdravstveni_podaciRow = ((Zdravstveni_podaciRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        ID_podataka,
                         Opis_simtoma,
                         Rezultati_krvne_pretrage,
                         Informacije_o_alergiji,
@@ -456,6 +465,13 @@ namespace Zadaca_03 {
                 rowZdravstveni_podaciRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowZdravstveni_podaciRow);
                 return rowZdravstveni_podaciRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Zdravstveni_podaciRow FindByID_podataka(int ID_podataka) {
+                return ((Zdravstveni_podaciRow)(this.Rows.Find(new object[] {
+                            ID_podataka})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -475,6 +491,7 @@ namespace Zadaca_03 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
+                this.columnID_podataka = base.Columns["ID_podataka"];
                 this.columnOpis_simtoma = base.Columns["Opis_simtoma"];
                 this.columnRezultati_krvne_pretrage = base.Columns["Rezultati_krvne_pretrage"];
                 this.columnInformacije_o_alergiji = base.Columns["Informacije_o_alergiji"];
@@ -489,6 +506,8 @@ namespace Zadaca_03 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
+                this.columnID_podataka = new global::System.Data.DataColumn("ID_podataka", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_podataka);
                 this.columnOpis_simtoma = new global::System.Data.DataColumn("Opis_simtoma", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOpis_simtoma);
                 this.columnRezultati_krvne_pretrage = new global::System.Data.DataColumn("Rezultati_krvne_pretrage", typeof(string), null, global::System.Data.MappingType.Element);
@@ -507,6 +526,10 @@ namespace Zadaca_03 {
                 base.Columns.Add(this.columnOsobne_bilješke);
                 this.columnTermin = new global::System.Data.DataColumn("Termin", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTermin);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID_podataka}, true));
+                this.columnID_podataka.AllowDBNull = false;
+                this.columnID_podataka.Unique = true;
                 this.columnOpis_simtoma.AllowDBNull = false;
                 this.columnOpis_simtoma.MaxLength = 2147483647;
                 this.columnRezultati_krvne_pretrage.AllowDBNull = false;
@@ -589,7 +612,7 @@ namespace Zadaca_03 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                PI2324_msokser22_DBDataSet ds = new PI2324_msokser22_DBDataSet();
+                PI2324_msokser22_DBDataSet2 ds = new PI2324_msokser22_DBDataSet2();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -646,11 +669,6 @@ namespace Zadaca_03 {
                 xs.Add(dsSchema);
                 return type;
             }
-
-            internal object FindByidZdravstveniPodaci(int id)
-            {
-                throw new NotImplementedException();
-            }
         }
         
         /// <summary>
@@ -665,6 +683,17 @@ namespace Zadaca_03 {
             internal Zdravstveni_podaciRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tableZdravstveni_podaci = ((Zdravstveni_podaciDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int ID_podataka {
+                get {
+                    return ((int)(this[this.tableZdravstveni_podaci.ID_podatakaColumn]));
+                }
+                set {
+                    this[this.tableZdravstveni_podaci.ID_podatakaColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -836,7 +865,7 @@ namespace Zadaca_03 {
         }
     }
 }
-namespace Zadaca_03.PI2324_msokser22_DBDataSetTableAdapters {
+namespace Zadaca_03.PI2324_msokser22_DBDataSet2TableAdapters {
     
     
     /// <summary>
@@ -960,6 +989,7 @@ namespace Zadaca_03.PI2324_msokser22_DBDataSetTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Zdravstveni_podaci";
+            tableMapping.ColumnMappings.Add("ID_podataka", "ID_podataka");
             tableMapping.ColumnMappings.Add("Opis_simtoma", "Opis_simtoma");
             tableMapping.ColumnMappings.Add("Rezultati_krvne_pretrage", "Rezultati_krvne_pretrage");
             tableMapping.ColumnMappings.Add("Informacije_o_alergiji", "Informacije_o_alergiji");
@@ -970,6 +1000,48 @@ namespace Zadaca_03.PI2324_msokser22_DBDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Osobne_bilješke", "Osobne_bilješke");
             tableMapping.ColumnMappings.Add("Termin", "Termin");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Zdravstveni_podaci] WHERE (([ID_podataka] = @Original_ID_podat" +
+                "aka) AND ((@IsNull_Termin = 1 AND [Termin] IS NULL) OR ([Termin] = @Original_Ter" +
+                "min)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_podataka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_podataka", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Termin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Termin", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Termin", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Termin", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Zdravstveni_podaci] ([ID_podataka], [Opis_simtoma], [Rezultati_krvne_pretrage], [Informacije_o_alergiji], [Popis_prepisanih_lijekova], [Napomene_liječnika], [Dijagnoza], [Plan_liječenja], [Osobne_bilješke], [Termin]) VALUES (@ID_podataka, @Opis_simtoma, @Rezultati_krvne_pretrage, @Informacije_o_alergiji, @Popis_prepisanih_lijekova, @Napomene_liječnika, @Dijagnoza, @Plan_liječenja, @Osobne_bilješke, @Termin);
+SELECT ID_podataka, Opis_simtoma, Rezultati_krvne_pretrage, Informacije_o_alergiji, Popis_prepisanih_lijekova, Napomene_liječnika, Dijagnoza, Plan_liječenja, Osobne_bilješke, Termin FROM Zdravstveni_podaci WHERE (ID_podataka = @ID_podataka)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_podataka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_podataka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Opis_simtoma", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Opis_simtoma", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rezultati_krvne_pretrage", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rezultati_krvne_pretrage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Informacije_o_alergiji", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Informacije_o_alergiji", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Popis_prepisanih_lijekova", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Popis_prepisanih_lijekova", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Napomene_liječnika", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Napomene_liječnika", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Dijagnoza", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Dijagnoza", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Plan_liječenja", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plan_liječenja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Osobne_bilješke", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Osobne_bilješke", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Termin", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Termin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Zdravstveni_podaci] SET [ID_podataka] = @ID_podataka, [Opis_simtoma] = @Opis_simtoma, [Rezultati_krvne_pretrage] = @Rezultati_krvne_pretrage, [Informacije_o_alergiji] = @Informacije_o_alergiji, [Popis_prepisanih_lijekova] = @Popis_prepisanih_lijekova, [Napomene_liječnika] = @Napomene_liječnika, [Dijagnoza] = @Dijagnoza, [Plan_liječenja] = @Plan_liječenja, [Osobne_bilješke] = @Osobne_bilješke, [Termin] = @Termin WHERE (([ID_podataka] = @Original_ID_podataka) AND ((@IsNull_Termin = 1 AND [Termin] IS NULL) OR ([Termin] = @Original_Termin)));
+SELECT ID_podataka, Opis_simtoma, Rezultati_krvne_pretrage, Informacije_o_alergiji, Popis_prepisanih_lijekova, Napomene_liječnika, Dijagnoza, Plan_liječenja, Osobne_bilješke, Termin FROM Zdravstveni_podaci WHERE (ID_podataka = @ID_podataka)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_podataka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_podataka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Opis_simtoma", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Opis_simtoma", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rezultati_krvne_pretrage", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rezultati_krvne_pretrage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Informacije_o_alergiji", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Informacije_o_alergiji", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Popis_prepisanih_lijekova", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Popis_prepisanih_lijekova", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Napomene_liječnika", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Napomene_liječnika", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Dijagnoza", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Dijagnoza", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Plan_liječenja", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plan_liječenja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Osobne_bilješke", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Osobne_bilješke", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Termin", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Termin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_podataka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_podataka", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Termin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Termin", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Termin", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Termin", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -985,9 +1057,9 @@ namespace Zadaca_03.PI2324_msokser22_DBDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Opis_simtoma, Rezultati_krvne_pretrage, Informacije_o_alergiji, Popis_prep" +
-                "isanih_lijekova, Napomene_liječnika, Dijagnoza, Plan_liječenja, Osobne_bilješke," +
-                " Termin FROM dbo.Zdravstveni_podaci";
+            this._commandCollection[0].CommandText = "SELECT ID_podataka, Opis_simtoma, Rezultati_krvne_pretrage, Informacije_o_alergij" +
+                "i, Popis_prepisanih_lijekova, Napomene_liječnika, Dijagnoza, Plan_liječenja, Oso" +
+                "bne_bilješke, Termin FROM dbo.Zdravstveni_podaci";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -995,7 +1067,7 @@ namespace Zadaca_03.PI2324_msokser22_DBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PI2324_msokser22_DBDataSet.Zdravstveni_podaciDataTable dataTable) {
+        public virtual int Fill(PI2324_msokser22_DBDataSet2.Zdravstveni_podaciDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1008,16 +1080,239 @@ namespace Zadaca_03.PI2324_msokser22_DBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PI2324_msokser22_DBDataSet.Zdravstveni_podaciDataTable GetData() {
+        public virtual PI2324_msokser22_DBDataSet2.Zdravstveni_podaciDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            PI2324_msokser22_DBDataSet.Zdravstveni_podaciDataTable dataTable = new PI2324_msokser22_DBDataSet.Zdravstveni_podaciDataTable();
+            PI2324_msokser22_DBDataSet2.Zdravstveni_podaciDataTable dataTable = new PI2324_msokser22_DBDataSet2.Zdravstveni_podaciDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
-
-        internal void Update(PI2324_msokser22_DBDataSet.Zdravstveni_podaciDataTable zdravstveniPodaciDataTable)
-        {
-            throw new NotImplementedException();
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(PI2324_msokser22_DBDataSet2.Zdravstveni_podaciDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(PI2324_msokser22_DBDataSet2 dataSet) {
+            return this.Adapter.Update(dataSet, "Zdravstveni_podaci");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_ID_podataka, global::System.Nullable<global::System.DateTime> Original_Termin) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_podataka));
+            if ((Original_Termin.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_Termin.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(int ID_podataka, string Opis_simtoma, string Rezultati_krvne_pretrage, string Informacije_o_alergiji, string Popis_prepisanih_lijekova, string Napomene_liječnika, string Dijagnoza, string Plan_liječenja, string Osobne_bilješke, global::System.Nullable<global::System.DateTime> Termin) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID_podataka));
+            if ((Opis_simtoma == null)) {
+                throw new global::System.ArgumentNullException("Opis_simtoma");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Opis_simtoma));
+            }
+            if ((Rezultati_krvne_pretrage == null)) {
+                throw new global::System.ArgumentNullException("Rezultati_krvne_pretrage");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Rezultati_krvne_pretrage));
+            }
+            if ((Informacije_o_alergiji == null)) {
+                throw new global::System.ArgumentNullException("Informacije_o_alergiji");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Informacije_o_alergiji));
+            }
+            if ((Popis_prepisanih_lijekova == null)) {
+                throw new global::System.ArgumentNullException("Popis_prepisanih_lijekova");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Popis_prepisanih_lijekova));
+            }
+            if ((Napomene_liječnika == null)) {
+                throw new global::System.ArgumentNullException("Napomene_liječnika");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Napomene_liječnika));
+            }
+            if ((Dijagnoza == null)) {
+                throw new global::System.ArgumentNullException("Dijagnoza");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Dijagnoza));
+            }
+            if ((Plan_liječenja == null)) {
+                throw new global::System.ArgumentNullException("Plan_liječenja");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Plan_liječenja));
+            }
+            if ((Osobne_bilješke == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Osobne_bilješke));
+            }
+            if ((Termin.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(Termin.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int ID_podataka, string Opis_simtoma, string Rezultati_krvne_pretrage, string Informacije_o_alergiji, string Popis_prepisanih_lijekova, string Napomene_liječnika, string Dijagnoza, string Plan_liječenja, string Osobne_bilješke, global::System.Nullable<global::System.DateTime> Termin, int Original_ID_podataka, global::System.Nullable<global::System.DateTime> Original_Termin) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID_podataka));
+            if ((Opis_simtoma == null)) {
+                throw new global::System.ArgumentNullException("Opis_simtoma");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Opis_simtoma));
+            }
+            if ((Rezultati_krvne_pretrage == null)) {
+                throw new global::System.ArgumentNullException("Rezultati_krvne_pretrage");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Rezultati_krvne_pretrage));
+            }
+            if ((Informacije_o_alergiji == null)) {
+                throw new global::System.ArgumentNullException("Informacije_o_alergiji");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Informacije_o_alergiji));
+            }
+            if ((Popis_prepisanih_lijekova == null)) {
+                throw new global::System.ArgumentNullException("Popis_prepisanih_lijekova");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Popis_prepisanih_lijekova));
+            }
+            if ((Napomene_liječnika == null)) {
+                throw new global::System.ArgumentNullException("Napomene_liječnika");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Napomene_liječnika));
+            }
+            if ((Dijagnoza == null)) {
+                throw new global::System.ArgumentNullException("Dijagnoza");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Dijagnoza));
+            }
+            if ((Plan_liječenja == null)) {
+                throw new global::System.ArgumentNullException("Plan_liječenja");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Plan_liječenja));
+            }
+            if ((Osobne_bilješke == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Osobne_bilješke));
+            }
+            if ((Termin.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Termin.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_ID_podataka));
+            if ((Original_Termin.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_Termin.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string Opis_simtoma, string Rezultati_krvne_pretrage, string Informacije_o_alergiji, string Popis_prepisanih_lijekova, string Napomene_liječnika, string Dijagnoza, string Plan_liječenja, string Osobne_bilješke, global::System.Nullable<global::System.DateTime> Termin, int Original_ID_podataka, global::System.Nullable<global::System.DateTime> Original_Termin) {
+            return this.Update(Original_ID_podataka, Opis_simtoma, Rezultati_krvne_pretrage, Informacije_o_alergiji, Popis_prepisanih_lijekova, Napomene_liječnika, Dijagnoza, Plan_liječenja, Osobne_bilješke, Termin, Original_ID_podataka, Original_Termin);
         }
     }
     
@@ -1033,6 +1328,8 @@ namespace Zadaca_03.PI2324_msokser22_DBDataSetTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
+        private Zdravstveni_podaciTableAdapter _zdravstveni_podaciTableAdapter;
+        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -1045,6 +1342,20 @@ namespace Zadaca_03.PI2324_msokser22_DBDataSetTableAdapters {
             }
             set {
                 this._updateOrder = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public Zdravstveni_podaciTableAdapter Zdravstveni_podaciTableAdapter {
+            get {
+                return this._zdravstveni_podaciTableAdapter;
+            }
+            set {
+                this._zdravstveni_podaciTableAdapter = value;
             }
         }
         
@@ -1067,6 +1378,10 @@ namespace Zadaca_03.PI2324_msokser22_DBDataSetTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
+                if (((this._zdravstveni_podaciTableAdapter != null) 
+                            && (this._zdravstveni_podaciTableAdapter.Connection != null))) {
+                    return this._zdravstveni_podaciTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -1080,6 +1395,9 @@ namespace Zadaca_03.PI2324_msokser22_DBDataSetTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
+                if ((this._zdravstveni_podaciTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 return count;
             }
         }
@@ -1089,8 +1407,17 @@ namespace Zadaca_03.PI2324_msokser22_DBDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(PI2324_msokser22_DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(PI2324_msokser22_DBDataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._zdravstveni_podaciTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Zdravstveni_podaci.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._zdravstveni_podaciTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -1099,8 +1426,16 @@ namespace Zadaca_03.PI2324_msokser22_DBDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(PI2324_msokser22_DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(PI2324_msokser22_DBDataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._zdravstveni_podaciTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Zdravstveni_podaci.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._zdravstveni_podaciTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -1109,8 +1444,16 @@ namespace Zadaca_03.PI2324_msokser22_DBDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(PI2324_msokser22_DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(PI2324_msokser22_DBDataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._zdravstveni_podaciTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Zdravstveni_podaci.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._zdravstveni_podaciTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             return result;
         }
         
@@ -1143,12 +1486,17 @@ namespace Zadaca_03.PI2324_msokser22_DBDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(PI2324_msokser22_DBDataSet dataSet) {
+        public virtual int UpdateAll(PI2324_msokser22_DBDataSet2 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
+            }
+            if (((this._zdravstveni_podaciTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._zdravstveni_podaciTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
@@ -1182,6 +1530,15 @@ namespace Zadaca_03.PI2324_msokser22_DBDataSetTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
+                if ((this._zdravstveni_podaciTableAdapter != null)) {
+                    revertConnections.Add(this._zdravstveni_podaciTableAdapter, this._zdravstveni_podaciTableAdapter.Connection);
+                    this._zdravstveni_podaciTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._zdravstveni_podaciTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._zdravstveni_podaciTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._zdravstveni_podaciTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._zdravstveni_podaciTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -1239,6 +1596,10 @@ namespace Zadaca_03.PI2324_msokser22_DBDataSetTableAdapters {
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
+                }
+                if ((this._zdravstveni_podaciTableAdapter != null)) {
+                    this._zdravstveni_podaciTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._zdravstveni_podaciTableAdapter]));
+                    this._zdravstveni_podaciTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
