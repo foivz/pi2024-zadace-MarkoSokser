@@ -4,19 +4,19 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Zadaca_03.PI2324_msokser22_DBDataSetTableAdapters;
+using Zadaca_03.PI2324_msokser22_DBDataSet2TableAdapters;
 
 namespace Zadaca_03.Repozitori
 {
     public class ManipulacijaPodatakaModel
     {
         private Zdravstveni_podaciTableAdapter zdravstveniPodaciTableAdapter;
-        private PI2324_msokser22_DBDataSet.Zdravstveni_podaciDataTable zdravstveniPodaciDataTable;
+        private PI2324_msokser22_DBDataSet2.Zdravstveni_podaciDataTable zdravstveniPodaciDataTable;
 
         public ManipulacijaPodatakaModel()
         {
             zdravstveniPodaciTableAdapter = new Zdravstveni_podaciTableAdapter();
-            zdravstveniPodaciDataTable = new PI2324_msokser22_DBDataSet.Zdravstveni_podaciDataTable();
+            zdravstveniPodaciDataTable = new PI2324_msokser22_DBDataSet2.Zdravstveni_podaciDataTable();
             UcitajPodatke();
         }
 
