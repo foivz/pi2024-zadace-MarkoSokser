@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Modeli\Baza.cs" />
+    <Compile Include="Modeli\Korisnik.cs" />
     <Compile Include="PI2324_msokser22_DBDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

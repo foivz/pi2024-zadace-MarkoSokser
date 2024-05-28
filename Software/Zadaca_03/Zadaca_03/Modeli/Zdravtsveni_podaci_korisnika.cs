@@ -4,15 +4,15 @@ namespace Zadaca_03.Modeli
 {
     public class ZdravstveniPodaci
     {
-        public int ID_podataka { get; set; }
-        public string Opis_simtoma { get; set; }
-        public string Rezultati_krvne_pretrage { get; set; }
-        public string Informacije_o_alergiji { get; set; }
-        public string Popis_prepisanih_lijekova { get; set; }
-        public string Napomene_liječnika { get; set; }
+        public int IDPodataka { get; set; }
+        public string OpisSimptoma { get; set; }
+        public string RezultatiKrvnePretrage { get; set; }
+        public string InformacijeOAlergiji { get; set; }
+        public string PopisPrepisanihLijekova { get; set; }
+        public string NapomeneLijecnika { get; set; }
         public string Dijagnoza { get; set; }
-        public string Plan_liječenja { get; set; }
-        public string Osobne_bilješke { get; set; }
+        public string PlanLijecenja { get; set; }
+        public string OsobneBiljeske { get; set; }
         public DateTime? Termin { get; set; }
     }
 }

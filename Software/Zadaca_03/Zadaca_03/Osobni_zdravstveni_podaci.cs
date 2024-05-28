@@ -26,7 +26,7 @@ namespace Zadaca_03
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'pI2324_msokser22_DBDataSet2.Zdravstveni_podaci' table. You can move, or remove it, as needed.
+           
             this.zdravstveni_podaciTableAdapter2.Fill(this.pI2324_msokser22_DBDataSet2.Zdravstveni_podaci);
            
            
