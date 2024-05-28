@@ -140,6 +140,7 @@
             this.osobnebilješkeDataGridViewTextBoxColumn.HeaderText = "Osobne bilješke";
             this.osobnebilješkeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.osobnebilješkeDataGridViewTextBoxColumn.Name = "osobnebilješkeDataGridViewTextBoxColumn";
+            this.osobnebilješkeDataGridViewTextBoxColumn.ReadOnly = true;
             this.osobnebilješkeDataGridViewTextBoxColumn.Width = 123;
             // 
             // terminDataGridViewTextBoxColumn
@@ -167,7 +168,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "Manipulacija_podataka";
             this.Text = "Promjena podataka";
-            this.Load += new System.EventHandler(this.Manipulacija_podataka_Load);
+         
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zdravstvenipodaciBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pI2324_msokser22_DBDataSet)).EndInit();

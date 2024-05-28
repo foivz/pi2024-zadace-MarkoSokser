@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using Zadaca_03.Repozitori;
+
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Zadaca_03
 {
@@ -11,22 +12,31 @@ namespace Zadaca_03
         public event EventHandler PodaciPohranjeni;
         public event EventHandler PodaciPromijenjeni;
 
+       
+        private string connectionString = "Server=31.147.206.65;Database=PI2324_msokser22_DB;User Id=PI2324_msokser22_User;Password=$khO:dz&;";
+
         public Manipulacija_podataka()
         {
             InitializeComponent();
+            PopuniGrid();
         }
 
-
-        private void Manipulacija_podataka_Load(object sender, EventArgs e)
+        private void PopuniGrid()
         {
-            LoadData();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT * FROM Zdravstveni_podaci"; // Postavite svoj upit za dohvaćanje podataka
+
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                DataTable dataTable = new DataTable();
+
+                adapter.Fill(dataTable);
+
+                dataGridView1.DataSource = dataTable;
+            }
         }
 
-        private void LoadData()
-        {
-            var zdravstveniPodaci = ZdravstveniPodaciRepozitorij.GetAllZdravstveniPodaci();
-            dataGridView1.DataSource = zdravstveniPodaci;
-        }
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -68,41 +78,10 @@ namespace Zadaca_03
 
         private void Pohrani_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                if (row.Cells["osobnebilješkeDataGridViewTextBoxColumn"].IsInEditMode || row.Cells["terminDataGridViewTextBoxColumn"].IsInEditMode)
-                {
-                    int id;
-                    bool isNewRecord = row.Cells["ID_podataka"].Value == null || !int.TryParse(row.Cells["ID_podataka"].Value.ToString(), out id);
-
-                    string noveBiljeske = row.Cells["osobnebilješkeDataGridViewTextBoxColumn"].Value?.ToString();
-                    DateTime? noviTermin = row.Cells["terminDataGridViewTextBoxColumn"].Value as DateTime?;
-
-                    if (isNewRecord)
-                    {
-                        // Insert new record
-                        ZdravstveniPodaciRepozitorij.InsertOsobneBiljeskeITermin(noveBiljeske, noviTermin);
-                    }
-                    else
-                    {
-                        // Update existing record
-                        ZdravstveniPodaciRepozitorij.UpdateOsobneBiljeske(id, noveBiljeske, noviTermin);
-                    }
-                }
+           
             }
 
-            MessageBox.Show("Promjene su pohranjene.");
-
-            // Aktivirajte događaj nakon pohrane podataka
-            PodaciPohranjeni?.Invoke(this, EventArgs.Empty);
-            PodaciPromijenjeni?.Invoke(this, EventArgs.Empty);
-
-        }
-
-
-
-       
-        
+           
         private void Dodaj_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedCells.Count > 0)
