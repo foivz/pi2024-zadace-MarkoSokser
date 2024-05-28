@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Zadaca_03.Repozitori;
 
 namespace Zadaca_03
 {
@@ -37,12 +38,21 @@ namespace Zadaca_03
         "Popis prepisanih lijekova", "Napomene liječnika", "Dijagnoza",
         "Plan liječenja", "Osobne bilješke", "Termin"
     });
+
+
             // Event handler za gumb Obriši
             Obriši.Click += Obriši_Click;
 
            
 
         }
+
+        private void LoadData()
+        {
+            var zdravstveniPodaci = ZdravstveniPodaciRepozitorij.GetAllZdravstveniPodaci();
+            Zdravstveni_podaci.DataSource = zdravstveniPodaci;
+        }
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -113,9 +123,18 @@ namespace Zadaca_03
 
         private void Dodaj_Click(object sender, EventArgs e)
         {
-            Manipulacija_podataka manipulacijaPodatakaForma = new Manipulacija_podataka();
-            manipulacijaPodatakaForma.Show();
+            Manipulacija_podataka manipulacijaForma = new Manipulacija_podataka();
+            manipulacijaForma.PodaciPohranjeni += ManipulacijaForma_PodaciPohranjeni;
+            manipulacijaForma.PodaciPromijenjeni += (s, ev) => LoadData();
+            manipulacijaForma.Show();
+        }
 
+
+        public void ManipulacijaForma_PodaciPohranjeni(object sender, EventArgs e)
+        {
+            // Osvježavanje podataka na prvoj formi nakon pohrane na drugoj formi
+            LoadData();
+            this.Refresh();
         }
 
         private void Promjeni_Click(object sender, EventArgs e)

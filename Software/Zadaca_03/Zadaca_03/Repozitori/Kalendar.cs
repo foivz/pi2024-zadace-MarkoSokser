@@ -140,7 +140,7 @@ class CalendarEditingControl : DateTimePicker, IDataGridViewEditingControl
 
     public void PrepareEditingControlForEdit(bool selectAll)
     {
-        // Nema posebnih priprema potrebnih
+        
     }
 
     public bool RepositionEditingControlOnValueChange

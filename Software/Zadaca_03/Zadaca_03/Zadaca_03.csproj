@@ -46,11 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modeli\Baza.cs" />
     <Compile Include="PI2324_msokser22_DBDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PI2324_msokser22_DBDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Repozitori\ZdravstveniPodaciRepozitorij.cs" />
     <Compile Include="Repozitori\Kalendar.cs" />
     <Compile Include="Manipulacija_podataka.cs">
       <SubType>Form</SubType>
@@ -64,11 +66,9 @@
     <Compile Include="Osobni_zdravstveni_podaci.Designer.cs">
       <DependentUpon>Osobni_zdravstveni_podaci.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modeli\Podaci_o_zdravlju_Korisnika.cs" />
+    <Compile Include="Modeli\Zdravtsveni_podaci_korisnika.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repozitori\Promjena_podataka.cs" />
-    <Compile Include="Repozitori\Zdravstveni_Podaci.cs" />
     <EmbeddedResource Include="Manipulacija_podataka.resx">
       <DependentUpon>Manipulacija_podataka.cs</DependentUpon>
     </EmbeddedResource>
