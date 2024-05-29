@@ -75,6 +75,7 @@
             this.zdravstveni_podaciTableAdapter2 = new Zadaca_03.PI2324_msokser22_DBDataSet2TableAdapters.Zdravstveni_podaciTableAdapter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBoxPretraga = new System.Windows.Forms.TextBox();
+            this.buttonPretraga = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Zdravstveni_podaci)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zdravstvenipodaciBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pI2324_msokser22_DBDataSet2)).BeginInit();
@@ -410,13 +411,21 @@
             // 
             // textBoxPretraga
             // 
-            this.textBoxPretraga.Location = new System.Drawing.Point(304, 519);
+            this.textBoxPretraga.Location = new System.Drawing.Point(308, 519);
             this.textBoxPretraga.Multiline = true;
             this.textBoxPretraga.Name = "textBoxPretraga";
-            this.textBoxPretraga.Size = new System.Drawing.Size(229, 22);
+            this.textBoxPretraga.Size = new System.Drawing.Size(303, 22);
             this.textBoxPretraga.TabIndex = 8;
-            this.textBoxPretraga.Text = "Unesi pojam: ";
-            this.textBoxPretraga.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxPretraga.Text = "Unesite neki od propisan lijekova ili dijagnozu:  ";
+            // 
+            // buttonPretraga
+            // 
+            this.buttonPretraga.Location = new System.Drawing.Point(617, 517);
+            this.buttonPretraga.Name = "buttonPretraga";
+            this.buttonPretraga.Size = new System.Drawing.Size(75, 23);
+            this.buttonPretraga.TabIndex = 9;
+            this.buttonPretraga.Text = "Pretraži";
+            this.buttonPretraga.UseVisualStyleBackColor = true;
             // 
             // Osobni_zdravstveni_podaci
             // 
@@ -424,6 +433,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1799, 734);
+            this.Controls.Add(this.buttonPretraga);
             this.Controls.Add(this.textBoxPretraga);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Spremi);
@@ -485,5 +495,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn terminDataGridViewTextBoxColumn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBoxPretraga;
+        private System.Windows.Forms.Button buttonPretraga;
     }
 }

@@ -15,6 +15,8 @@ namespace Zadaca_03
 {
     public partial class Osobni_zdravstveni_podaci : Form
     {
+        private readonly string[] dijagnoze = { "Akutni faringitis", "Kronicni umor", "Gastrenteritis" };
+        private readonly string[] lijekovi = { "Amoksicilin", "Paracetamol", "Omeprazol" };
         public Osobni_zdravstveni_podaci()
         {
             InitializeComponent();
@@ -31,7 +33,8 @@ namespace Zadaca_03
             // Postavite ikonu forme
             SetFormIcon();
 
-          
+            buttonPretraga.Click += ButtonPretraga_Click;
+
         }
 
         public void SetFormIcon()
@@ -160,29 +163,48 @@ namespace Zadaca_03
             // Implementacija logike za spremanje
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+
+        private void ButtonPretraga_Click(object sender, EventArgs e)
         {
-           
-                string searchTerm = textBoxPretraga.Text.ToLower(); // Pretvaramo uneseni tekst u mala slova radi lakše usporedbe
+            string searchTerm = textBoxPretraga.Text;
+            string query;
 
-                foreach (DataGridViewRow row in Zdravstveni_podaci.Rows)
-                {
-                    bool rowVisible = false; // Pretpostavljamo da redak nije vidljiv
-
-                    foreach (DataGridViewCell cell in row.Cells)
-                    {
-                        if (cell.Value != null && cell.Value.ToString().ToLower().Contains(searchTerm))
-                        {
-                            rowVisible = true; // Ako pronađemo traženi tekst u ćeliji, označavamo redak kao vidljiv
-                            break; // Prekidamo unutarnju petlju jer smo pronašli traženi tekst
-                        }
-                    }
-
-                    // Postavljamo vidljivost retka prema rezultatu pretrage
-                    row.Visible = rowVisible;
-                }
+            if (dijagnoze.Contains(searchTerm))
+            {
+                query = "SELECT * FROM Zdravstveni_podaci WHERE Dijagnoza LIKE @searchTerm";
+            }
+            else if (lijekovi.Contains(searchTerm))
+            {
+                query = "SELECT * FROM Zdravstveni_podaci WHERE Popis_prepisanih_lijekova LIKE @searchTerm";
+            }
+            else
+            {
+                // Ako pretraženi pojam nije ni dijagnoza ni lijek, vrati sve podatke
+                query = "SELECT * FROM Zdravstveni_podaci";
             }
 
+            string connectionString = "Server=31.147.206.65;Database=PI2324_msokser22_DB;User Id=PI2324_msokser22_User;Password=$khO:dz&;";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@searchTerm", "%" + searchTerm + "%");
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                Zdravstveni_podaci.DataSource = table;
+            }
         }
-    
+
+
+
+
+    }
+
 }
+
+    
+    
+
