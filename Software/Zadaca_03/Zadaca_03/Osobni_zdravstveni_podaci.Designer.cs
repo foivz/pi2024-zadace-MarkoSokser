@@ -30,6 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -40,26 +49,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Osobni_zdravstveni_podaci));
             this.Zdravstveni_podaci = new System.Windows.Forms.DataGridView();
-            this.opissimtomaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rezultatikrvnepretrageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.informacijeoalergijiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.popisprepisanihlijekovaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.napomeneliječnikaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dijagnozaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.planliječenjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.osobnebilješkeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.terminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zdravstvenipodaciBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.pI2324_msokser22_DBDataSet2 = new Zadaca_03.PI2324_msokser22_DBDataSet2();
             this.zdravstvenipodaciBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -85,6 +76,16 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.opissimtomaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rezultatikrvnepretrageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.informacijeoalergijiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.popisprepisanihlijekovaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.napomeneliječnikaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dijagnozaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.planliječenjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.osobnebilješkeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.terminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Zdravstveni_podaci)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zdravstvenipodaciBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pI2324_msokser22_DBDataSet2)).BeginInit();
@@ -105,8 +106,8 @@
             this.Zdravstveni_podaci.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.Zdravstveni_podaci.ColumnHeadersHeight = 29;
             this.Zdravstveni_podaci.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.opissimtomaDataGridViewTextBoxColumn,
             this.Column1,
+            this.opissimtomaDataGridViewTextBoxColumn,
             this.rezultatikrvnepretrageDataGridViewTextBoxColumn,
             this.informacijeoalergijiDataGridViewTextBoxColumn,
             this.popisprepisanihlijekovaDataGridViewTextBoxColumn,
@@ -123,132 +124,6 @@
             this.Zdravstveni_podaci.Size = new System.Drawing.Size(1664, 243);
             this.Zdravstveni_podaci.TabIndex = 0;
             this.Zdravstveni_podaci.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // opissimtomaDataGridViewTextBoxColumn
-            // 
-            this.opissimtomaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.opissimtomaDataGridViewTextBoxColumn.DataPropertyName = "Opis_simtoma";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.opissimtomaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.opissimtomaDataGridViewTextBoxColumn.HeaderText = "Opis simtoma";
-            this.opissimtomaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.opissimtomaDataGridViewTextBoxColumn.Name = "opissimtomaDataGridViewTextBoxColumn";
-            this.opissimtomaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.opissimtomaDataGridViewTextBoxColumn.Width = 118;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "ID_podataka";
-            this.Column1.HeaderText = "Column1";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Visible = false;
-            this.Column1.Width = 88;
-            // 
-            // rezultatikrvnepretrageDataGridViewTextBoxColumn
-            // 
-            this.rezultatikrvnepretrageDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.rezultatikrvnepretrageDataGridViewTextBoxColumn.DataPropertyName = "Rezultati_krvne_pretrage";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.rezultatikrvnepretrageDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.rezultatikrvnepretrageDataGridViewTextBoxColumn.HeaderText = "Rezultati krvne pretrage";
-            this.rezultatikrvnepretrageDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.rezultatikrvnepretrageDataGridViewTextBoxColumn.Name = "rezultatikrvnepretrageDataGridViewTextBoxColumn";
-            this.rezultatikrvnepretrageDataGridViewTextBoxColumn.ReadOnly = true;
-            this.rezultatikrvnepretrageDataGridViewTextBoxColumn.Width = 177;
-            // 
-            // informacijeoalergijiDataGridViewTextBoxColumn
-            // 
-            this.informacijeoalergijiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.informacijeoalergijiDataGridViewTextBoxColumn.DataPropertyName = "Informacije_o_alergiji";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.informacijeoalergijiDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.informacijeoalergijiDataGridViewTextBoxColumn.HeaderText = "Informacije o alergiji";
-            this.informacijeoalergijiDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.informacijeoalergijiDataGridViewTextBoxColumn.Name = "informacijeoalergijiDataGridViewTextBoxColumn";
-            this.informacijeoalergijiDataGridViewTextBoxColumn.ReadOnly = true;
-            this.informacijeoalergijiDataGridViewTextBoxColumn.Width = 155;
-            // 
-            // popisprepisanihlijekovaDataGridViewTextBoxColumn
-            // 
-            this.popisprepisanihlijekovaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.popisprepisanihlijekovaDataGridViewTextBoxColumn.DataPropertyName = "Popis_prepisanih_lijekova";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.popisprepisanihlijekovaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.popisprepisanihlijekovaDataGridViewTextBoxColumn.HeaderText = "Popis prepisanih lijekova";
-            this.popisprepisanihlijekovaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.popisprepisanihlijekovaDataGridViewTextBoxColumn.Name = "popisprepisanihlijekovaDataGridViewTextBoxColumn";
-            this.popisprepisanihlijekovaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.popisprepisanihlijekovaDataGridViewTextBoxColumn.Width = 187;
-            // 
-            // napomeneliječnikaDataGridViewTextBoxColumn
-            // 
-            this.napomeneliječnikaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.napomeneliječnikaDataGridViewTextBoxColumn.DataPropertyName = "Napomene_liječnika";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.napomeneliječnikaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.napomeneliječnikaDataGridViewTextBoxColumn.HeaderText = "Napomene liječnika";
-            this.napomeneliječnikaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.napomeneliječnikaDataGridViewTextBoxColumn.Name = "napomeneliječnikaDataGridViewTextBoxColumn";
-            this.napomeneliječnikaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.napomeneliječnikaDataGridViewTextBoxColumn.Width = 156;
-            // 
-            // dijagnozaDataGridViewTextBoxColumn
-            // 
-            this.dijagnozaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dijagnozaDataGridViewTextBoxColumn.DataPropertyName = "Dijagnoza";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dijagnozaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dijagnozaDataGridViewTextBoxColumn.HeaderText = "Dijagnoza";
-            this.dijagnozaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dijagnozaDataGridViewTextBoxColumn.Name = "dijagnozaDataGridViewTextBoxColumn";
-            this.dijagnozaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dijagnozaDataGridViewTextBoxColumn.Width = 97;
-            // 
-            // planliječenjaDataGridViewTextBoxColumn
-            // 
-            this.planliječenjaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.planliječenjaDataGridViewTextBoxColumn.DataPropertyName = "Plan_liječenja";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.planliječenjaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
-            this.planliječenjaDataGridViewTextBoxColumn.HeaderText = "Plan liječenja";
-            this.planliječenjaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.planliječenjaDataGridViewTextBoxColumn.Name = "planliječenjaDataGridViewTextBoxColumn";
-            this.planliječenjaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.planliječenjaDataGridViewTextBoxColumn.Width = 116;
-            // 
-            // osobnebilješkeDataGridViewTextBoxColumn
-            // 
-            this.osobnebilješkeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.osobnebilješkeDataGridViewTextBoxColumn.DataPropertyName = "Osobne_bilješke";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.osobnebilješkeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
-            this.osobnebilješkeDataGridViewTextBoxColumn.HeaderText = "Osobne bilješke";
-            this.osobnebilješkeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.osobnebilješkeDataGridViewTextBoxColumn.Name = "osobnebilješkeDataGridViewTextBoxColumn";
-            this.osobnebilješkeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.osobnebilješkeDataGridViewTextBoxColumn.Width = 134;
-            // 
-            // terminDataGridViewTextBoxColumn
-            // 
-            this.terminDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.terminDataGridViewTextBoxColumn.DataPropertyName = "Termin";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.terminDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
-            this.terminDataGridViewTextBoxColumn.HeaderText = "Termin";
-            this.terminDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.terminDataGridViewTextBoxColumn.Name = "terminDataGridViewTextBoxColumn";
-            this.terminDataGridViewTextBoxColumn.ReadOnly = true;
-            this.terminDataGridViewTextBoxColumn.Width = 78;
             // 
             // zdravstvenipodaciBindingSource2
             // 
@@ -361,9 +236,9 @@
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Opis_simtoma";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewTextBoxColumn1.HeaderText = "Column1";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
@@ -383,9 +258,9 @@
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Rezultati_krvne_pretrage";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridViewTextBoxColumn3.HeaderText = "Rezultati_krvne_pretrage";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
@@ -396,9 +271,9 @@
             // 
             this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Informacije_o_alergiji";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridViewTextBoxColumn4.HeaderText = "Informacije_o_alergiji";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
@@ -409,9 +284,9 @@
             // 
             this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Popis_prepisanih_lijekova";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridViewTextBoxColumn5.HeaderText = "Popis_prepisanih_lijekova";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
@@ -422,9 +297,9 @@
             // 
             this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Napomene_liječnika";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridViewTextBoxColumn6.HeaderText = "Napomene_liječnika";
             this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
@@ -435,9 +310,9 @@
             // 
             this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Dijagnoza";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle17;
             this.dataGridViewTextBoxColumn7.HeaderText = "Dijagnoza";
             this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
@@ -448,9 +323,9 @@
             // 
             this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Plan_liječenja";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle18;
             this.dataGridViewTextBoxColumn8.HeaderText = "Plan_liječenja";
             this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
@@ -461,9 +336,9 @@
             // 
             this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn9.DataPropertyName = "Osobne_bilješke";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridViewTextBoxColumn9.HeaderText = "Osobne_bilješke";
             this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
@@ -474,14 +349,144 @@
             // 
             this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn10.DataPropertyName = "Termin";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridViewTextBoxColumn10.HeaderText = "Termin";
             this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
             this.dataGridViewTextBoxColumn10.Width = 125;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ID_podataka";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column1.HeaderText = "ID podataka";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.Visible = false;
+            this.Column1.Width = 110;
+            // 
+            // opissimtomaDataGridViewTextBoxColumn
+            // 
+            this.opissimtomaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.opissimtomaDataGridViewTextBoxColumn.DataPropertyName = "Opis_simtoma";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.opissimtomaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.opissimtomaDataGridViewTextBoxColumn.HeaderText = "Opis simtoma";
+            this.opissimtomaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.opissimtomaDataGridViewTextBoxColumn.Name = "opissimtomaDataGridViewTextBoxColumn";
+            this.opissimtomaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.opissimtomaDataGridViewTextBoxColumn.Width = 118;
+            // 
+            // rezultatikrvnepretrageDataGridViewTextBoxColumn
+            // 
+            this.rezultatikrvnepretrageDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.rezultatikrvnepretrageDataGridViewTextBoxColumn.DataPropertyName = "Rezultati_krvne_pretrage";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.rezultatikrvnepretrageDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.rezultatikrvnepretrageDataGridViewTextBoxColumn.HeaderText = "Rezultati krvne pretrage";
+            this.rezultatikrvnepretrageDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.rezultatikrvnepretrageDataGridViewTextBoxColumn.Name = "rezultatikrvnepretrageDataGridViewTextBoxColumn";
+            this.rezultatikrvnepretrageDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rezultatikrvnepretrageDataGridViewTextBoxColumn.Width = 177;
+            // 
+            // informacijeoalergijiDataGridViewTextBoxColumn
+            // 
+            this.informacijeoalergijiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.informacijeoalergijiDataGridViewTextBoxColumn.DataPropertyName = "Informacije_o_alergiji";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.informacijeoalergijiDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.informacijeoalergijiDataGridViewTextBoxColumn.HeaderText = "Informacije o alergiji";
+            this.informacijeoalergijiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.informacijeoalergijiDataGridViewTextBoxColumn.Name = "informacijeoalergijiDataGridViewTextBoxColumn";
+            this.informacijeoalergijiDataGridViewTextBoxColumn.ReadOnly = true;
+            this.informacijeoalergijiDataGridViewTextBoxColumn.Width = 155;
+            // 
+            // popisprepisanihlijekovaDataGridViewTextBoxColumn
+            // 
+            this.popisprepisanihlijekovaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.popisprepisanihlijekovaDataGridViewTextBoxColumn.DataPropertyName = "Popis_prepisanih_lijekova";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.popisprepisanihlijekovaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            this.popisprepisanihlijekovaDataGridViewTextBoxColumn.HeaderText = "Popis prepisanih lijekova";
+            this.popisprepisanihlijekovaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.popisprepisanihlijekovaDataGridViewTextBoxColumn.Name = "popisprepisanihlijekovaDataGridViewTextBoxColumn";
+            this.popisprepisanihlijekovaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.popisprepisanihlijekovaDataGridViewTextBoxColumn.Width = 187;
+            // 
+            // napomeneliječnikaDataGridViewTextBoxColumn
+            // 
+            this.napomeneliječnikaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.napomeneliječnikaDataGridViewTextBoxColumn.DataPropertyName = "Napomene_liječnika";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.napomeneliječnikaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            this.napomeneliječnikaDataGridViewTextBoxColumn.HeaderText = "Napomene liječnika";
+            this.napomeneliječnikaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.napomeneliječnikaDataGridViewTextBoxColumn.Name = "napomeneliječnikaDataGridViewTextBoxColumn";
+            this.napomeneliječnikaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.napomeneliječnikaDataGridViewTextBoxColumn.Width = 156;
+            // 
+            // dijagnozaDataGridViewTextBoxColumn
+            // 
+            this.dijagnozaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dijagnozaDataGridViewTextBoxColumn.DataPropertyName = "Dijagnoza";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dijagnozaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dijagnozaDataGridViewTextBoxColumn.HeaderText = "Dijagnoza";
+            this.dijagnozaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dijagnozaDataGridViewTextBoxColumn.Name = "dijagnozaDataGridViewTextBoxColumn";
+            this.dijagnozaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dijagnozaDataGridViewTextBoxColumn.Width = 97;
+            // 
+            // planliječenjaDataGridViewTextBoxColumn
+            // 
+            this.planliječenjaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.planliječenjaDataGridViewTextBoxColumn.DataPropertyName = "Plan_liječenja";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.planliječenjaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            this.planliječenjaDataGridViewTextBoxColumn.HeaderText = "Plan liječenja";
+            this.planliječenjaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.planliječenjaDataGridViewTextBoxColumn.Name = "planliječenjaDataGridViewTextBoxColumn";
+            this.planliječenjaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.planliječenjaDataGridViewTextBoxColumn.Width = 116;
+            // 
+            // osobnebilješkeDataGridViewTextBoxColumn
+            // 
+            this.osobnebilješkeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.osobnebilješkeDataGridViewTextBoxColumn.DataPropertyName = "Osobne_bilješke";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.osobnebilješkeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
+            this.osobnebilješkeDataGridViewTextBoxColumn.HeaderText = "Osobne bilješke";
+            this.osobnebilješkeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.osobnebilješkeDataGridViewTextBoxColumn.Name = "osobnebilješkeDataGridViewTextBoxColumn";
+            this.osobnebilješkeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.osobnebilješkeDataGridViewTextBoxColumn.Width = 134;
+            // 
+            // terminDataGridViewTextBoxColumn
+            // 
+            this.terminDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.terminDataGridViewTextBoxColumn.DataPropertyName = "Termin";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.terminDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
+            this.terminDataGridViewTextBoxColumn.HeaderText = "Termin";
+            this.terminDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.terminDataGridViewTextBoxColumn.Name = "terminDataGridViewTextBoxColumn";
+            this.terminDataGridViewTextBoxColumn.ReadOnly = true;
+            this.terminDataGridViewTextBoxColumn.Width = 78;
             // 
             // Osobni_zdravstveni_podaci
             // 
@@ -541,8 +546,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBoxPretraga;
         private System.Windows.Forms.Button buttonPretraga;
-        private System.Windows.Forms.DataGridViewTextBoxColumn opissimtomaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn opissimtomaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rezultatikrvnepretrageDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn informacijeoalergijiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn popisprepisanihlijekovaDataGridViewTextBoxColumn;

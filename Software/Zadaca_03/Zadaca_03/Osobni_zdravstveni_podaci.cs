@@ -87,10 +87,10 @@ namespace Zadaca_03
 
                     if (odabraniNazivStupca == "Pretraga")
                     {
-                        // Prikazujemo sve stupce osim Column1
+                        
                         foreach (DataGridViewColumn stupac in Zdravstveni_podaci.Columns)
                         {
-                            stupac.Visible = (stupac.Name != "Column1");
+                            stupac.Visible = true;
                         }
                         MessageBox.Show("Prikazani su svi stupci.", "Informacija", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -102,6 +102,7 @@ namespace Zadaca_03
 
                         if (odabraniStupac != null)
                         {
+                            
                             odabraniStupac.DisplayIndex = 0;
                             foreach (DataGridViewColumn stupac in Zdravstveni_podaci.Columns)
                             {
@@ -109,17 +110,22 @@ namespace Zadaca_03
                             }
                             odabraniStupac.Visible = true;
                         }
-                        
+                        else
+                        {
+                            MessageBox.Show("Odabrani stupac ne postoji.", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
-                
+                else
+                {
+                    MessageBox.Show("Molimo odaberite stupac za pretragu.", "Informacija", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Došlo je do greške: " + ex.Message, "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         private void Dodaj_Click(object sender, EventArgs e)
         {
