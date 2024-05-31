@@ -7,7 +7,7 @@ namespace ZdravstveniPodaciRepozitorij
 {
     public class ZdravstveniPodaciRepozitorij
     {
-        // Metoda za umetanje novih zdravstvenih podataka samo u stupac Osobne bilješke
+       
         public static void InsertOsobneBiljeske(ZdravstveniPodaci podaci)
         {
             string sql = $"INSERT INTO Zdravstveni_podaci (Osobne_bilješke) " +
@@ -18,7 +18,7 @@ namespace ZdravstveniPodaciRepozitorij
         }
 
 
-        // Metoda za ažuriranje postojećih zdravstvenih podataka samo u stupcu Termini
+       
         public static void UpdateTermini(int ID_podataka, DateTime termin)
         {
             string sql = $"UPDATE Zdravstveni_podaci " +
@@ -31,7 +31,7 @@ namespace ZdravstveniPodaciRepozitorij
 
 
 
-        // Metoda za brisanje zdravstvenih podataka samo u stupcu Osobne bilješke
+        
         public static void DeleteOsobneBiljeske(int ID_podataka)
         {
             string sql = $"DELETE FROM Zdravstveni_podaci WHERE ID_podataka = {ID_podataka} AND Osobne_bilješke IS NOT NULL";

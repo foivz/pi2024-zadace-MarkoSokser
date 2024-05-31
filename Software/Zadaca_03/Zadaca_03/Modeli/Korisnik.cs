@@ -13,9 +13,9 @@ namespace Zadaca_03.Modeli
         public string Prezime { get; set; }
         public string KorIme { get; set; }
         public int Lozinka { get; set; }
-        public int IdPodataka { get; set; }  // Foreign key reference
+        public int IdPodataka { get; set; }  
 
-        // Assuming there's a navigation property for the related ZdravstveniPodaci class
+        
         public ZdravstveniPodaci ZdravstveniPodaci { get; set; }
     }
 }

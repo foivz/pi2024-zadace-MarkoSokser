@@ -28,7 +28,7 @@ public class CalendarCell : DataGridViewTextBoxCell
 {
     public CalendarCell() : base()
     {
-        this.Style.Format = "d"; // Postavlja format prikaza datuma
+        this.Style.Format = "d"; 
     }
 
     public override void InitializeEditingControl(int rowIndex, object initialFormattedValue, DataGridViewCellStyle dataGridViewCellStyle)

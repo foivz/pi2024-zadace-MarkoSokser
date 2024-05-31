@@ -52,10 +52,6 @@ namespace Zadaca_03
             }
         }
 
-      
-
-        
-
         private void Form1_Load(object sender, EventArgs e)
         {
            
@@ -80,9 +76,6 @@ namespace Zadaca_03
             
         }
 
-        
-
-
         private void Pretraga_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -93,7 +86,7 @@ namespace Zadaca_03
 
                     if (odabraniNazivStupca == "Pretraga")
                     {
-                        // Prikaži sve stupce i vrati ih na prvobitni redoslijed
+                        
                         foreach (DataGridViewColumn stupac in Zdravstveni_podaci.Columns)
                         {
                             stupac.Visible = true;
@@ -108,7 +101,7 @@ namespace Zadaca_03
 
                         if (odabraniStupac != null)
                         {
-                            // Postavi redoslijed odabranog stupca na 0 i sakrij sve ostale stupce
+                            
                             odabraniStupac.DisplayIndex = 0;
                             foreach (DataGridViewColumn stupac in Zdravstveni_podaci.Columns)
                             {
@@ -155,35 +148,35 @@ namespace Zadaca_03
             {
                 DataGridViewCell selectedCell = Zdravstveni_podaci.SelectedCells[0];
 
-                // Check if the selected cell is in the "Osobne bilješke" column
+               
                 if (selectedCell.OwningColumn.Name == "osobnebilješkeDataGridViewTextBoxColumn")
                 {
-                    // Retrieve the ID of the data to be updated
+                  
                     int selectedRowIndex = selectedCell.RowIndex;
                     int ID_podataka = Convert.ToInt32(Zdravstveni_podaci.Rows[selectedRowIndex].Cells["Column1"].Value);
 
-                    // Define the SQL DELETE statement
+                   
                     string deleteQuery = "UPDATE Zdravstveni_podaci SET Osobne_bilješke = NULL WHERE ID_podataka = @ID_podataka";
 
-                    // Set up the SQL connection and command
+                    
                     string connectionString = "Server=31.147.206.65;Database=PI2324_msokser22_DB;User Id=PI2324_msokser22_User;Password=$khO:dz&;";
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
                         using (SqlCommand command = new SqlCommand(deleteQuery, connection))
                         {
-                            // Add parameter for ID_podataka
+                            
                             command.Parameters.AddWithValue("@ID_podataka", ID_podataka);
 
                             try
                             {
-                                // Open the connection and execute the DELETE command
+                                
                                 connection.Open();
                                 int rowsAffected = command.ExecuteNonQuery();
 
-                                // Check if any rows were affected
+                                
                                 if (rowsAffected > 0)
                                 {
-                                    // Clear the value of the selected cell
+                                    
                                     selectedCell.Value = DBNull.Value;
 
                                     MessageBox.Show("Podatak uspješno obrisan.", "Informacija", MessageBoxButtons.OK, MessageBoxIcon.Information);

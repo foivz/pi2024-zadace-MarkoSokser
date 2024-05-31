@@ -104,35 +104,34 @@ namespace Zadaca_03
 
         private void Dodaj_Click(object sender, EventArgs e)
         {
-            // Provjeri je li odabrana ćelija
+          
             if (dataGridView1.SelectedCells.Count > 0)
             {
-                // Dohvati indeks odabranog retka
+                
                 int rowIndex = dataGridView1.SelectedCells[0].RowIndex;
 
-                // Dohvati vrijednost iz ćelije "Osobne bilješke" odabranog retka
+                
                 string osobneBiljeske = dataGridView1.Rows[rowIndex].Cells["osobnebilješkeDataGridViewTextBoxColumn"].Value.ToString();
 
-                // Provjeri je li ćelija prazna
+                
                 if (string.IsNullOrEmpty(osobneBiljeske))
                 {
-                    // Dohvati tekst iz TextBox-a
+                  
                     string unosTeksta = Unos.Text;
 
-                    // Ažuriraj vrijednost u ćeliji "Osobne bilješke" odabranog retka s unesenim tekstom samo ako je ćelija prazna
+                   
                     dataGridView1.Rows[rowIndex].Cells["osobnebilješkeDataGridViewTextBoxColumn"].Value = unosTeksta;
 
-                    // Unesi novi tekst u bazu podataka samo ako je ćelija bila prazna
+                    
                     if (!string.IsNullOrEmpty(unosTeksta))
                     {
-                        // Dohvati ID podatka iz retka
+                       
                         int ID_podataka = Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells["Column1"].Value);
 
-                        // Ovdje možete pozvati odgovarajuću metodu za unos podataka u bazu
-                        // Na primjer, ako koristite SQL upit za unos podataka:
+                       
                         string query = $"UPDATE Zdravstveni_podaci SET Osobne_bilješke = '{unosTeksta}' WHERE ID_podataka = {ID_podataka}";
 
-                        // Izvršite SQL upit za unos podataka u bazu
+                        
                         try
                         {
                             DB.OpenConnection();
@@ -140,7 +139,7 @@ namespace Zadaca_03
                             DB.CloseConnection();
                             MessageBox.Show("Tekst je uspješno dodan u bazu podataka.", "Informacija", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            // Nakon što su podaci ažurirani, pozovi događaj
+                           
                             PodaciAzurirani?.Invoke(this, EventArgs.Empty);
                         }
                         catch (Exception ex)
