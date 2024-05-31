@@ -248,12 +248,19 @@ namespace Zadaca_03
 
         private void ManipulacijaForma_PodaciPohranjeni(object sender, EventArgs e)
         {
-            
+            ((Manipulacija_podataka)sender).PodaciAzurirani += PodaciAzuriraniHandler;
         }
 
         private void ManipulacijaForma_FormClosed(object sender, FormClosedEventArgs e)
         {
-            UcitajPodatke();  
+            UcitajPodatke();
+            ((Manipulacija_podataka)sender).PodaciAzurirani += PodaciAzuriraniHandler;
+        }
+
+        private void PodaciAzuriraniHandler(object sender, EventArgs e)
+        {
+            
+            UcitajPodatke();
         }
 
     }
