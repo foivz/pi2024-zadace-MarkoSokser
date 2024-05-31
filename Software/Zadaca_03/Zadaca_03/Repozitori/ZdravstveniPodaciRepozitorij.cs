@@ -16,18 +16,20 @@ namespace ZdravstveniPodaciRepozitorij
             DB.ExecuteCommand(sql);
             DB.CloseConnection();
         }
-        
+
 
         // Metoda za ažuriranje postojećih zdravstvenih podataka samo u stupcu Termini
-        public static void UpdateTermini(ZdravstveniPodaci podaci)
+        public static void UpdateTermini(int ID_podataka, DateTime termin)
         {
             string sql = $"UPDATE Zdravstveni_podaci " +
-                         $"SET Termin = '{podaci.Termin?.ToString("yyyy-MM-dd HH:mm:ss") ?? "NULL"}' " +
-                         $"WHERE ID_podataka = {podaci.OsobneBiljeske}";
+                         $"SET Termin = '{termin.ToString("yyyy-MM-dd ")}' " +
+                         $"WHERE ID_podataka = {ID_podataka}";
             DB.OpenConnection();
             DB.ExecuteCommand(sql);
             DB.CloseConnection();
         }
+
+
 
         // Metoda za brisanje zdravstvenih podataka samo u stupcu Osobne bilješke
         public static void DeleteOsobneBiljeske(int ID_podataka)

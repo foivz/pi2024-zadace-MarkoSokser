@@ -34,7 +34,8 @@ namespace Zadaca_03
             SetFormIcon();
 
             buttonPretraga.Click += ButtonPretraga_Click;
-
+            this.Load += Form1_Load;
+            Zdravstveni_podaci.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
         public void SetFormIcon()
@@ -144,12 +145,16 @@ namespace Zadaca_03
         private void Dodaj_Click(object sender, EventArgs e)
         {
             Manipulacija_podataka manipulacijaForma = new Manipulacija_podataka();
+            manipulacijaForma.PodaciPohranjeni += ManipulacijaForma_PodaciPohranjeni;
+            manipulacijaForma.FormClosed += ManipulacijaForma_FormClosed;
             manipulacijaForma.Show();
         }
 
         private void Promjeni_Click(object sender, EventArgs e)
         {
             Manipulacija_podataka manipulacijaPodatakaForma = new Manipulacija_podataka();
+            manipulacijaPodatakaForma.PodaciPohranjeni += ManipulacijaForma_PodaciPohranjeni;
+            manipulacijaPodatakaForma.FormClosed += ManipulacijaForma_FormClosed;
             manipulacijaPodatakaForma.Show();
         }
 
@@ -198,8 +203,23 @@ namespace Zadaca_03
             }
         }
 
+        private void UcitajPodatke()
+        {
+            // Ovdje ponovno učitajte podatke u DataGridView kontrolu
+            // Na primjer, možete ponovno pozvati Fill metodu kako biste ažurirali podatke iz baze podataka
+            this.zdravstveni_podaciTableAdapter2.Fill(this.pI2324_msokser22_DBDataSet2.Zdravstveni_podaci);
+        }
 
 
+        private void ManipulacijaForma_PodaciPohranjeni(object sender, EventArgs e)
+        {
+            // Ova metoda može biti prazna ili se koristiti za dodatnu logiku
+        }
+
+        private void ManipulacijaForma_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            UcitajPodatke();  // Ponovno učitajte podatke nakon zatvaranja forme
+        }
 
     }
 
