@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZdravstveniPodaciRepozitorij;
+
 
 namespace Zadaca_03
 {
@@ -21,16 +23,15 @@ namespace Zadaca_03
         {
             InitializeComponent();
 
-            // Postavite pozadinu forme
-            this.BackColor = Color.LightBlue; // Postavite željenu boju
+     
+            this.BackColor = Color.LightBlue; 
 
-            // Omogućite resizable mogućnost
+            
             this.FormBorderStyle = FormBorderStyle.Sizable;
 
-            // Centrirajte formu na ekranu
+            
             this.StartPosition = FormStartPosition.CenterScreen;
 
-            // Postavite ikonu forme
             SetFormIcon();
 
             buttonPretraga.Click += ButtonPretraga_Click;
@@ -42,8 +43,8 @@ namespace Zadaca_03
         {
             try
             {
-                // Postavljanje ikone forme iz resursa
-                this.Icon = Properties.Resources.Logo; // Pretpostavka da je vaša ikona nazvana "Logo"
+                
+                this.Icon = Properties.Resources.Logo; 
             }
             catch (Exception ex)
             {
@@ -51,42 +52,32 @@ namespace Zadaca_03
             }
         }
 
-        private void CenterDataGridViewCells()
-        {
-            foreach (DataGridViewColumn column in Zdravstveni_podaci.Columns)
-            {
-                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            }
-        }
+      
 
-        private DataGridViewCell zadnjeObrisanaCelija = null;
-        private string zadnjeObrisanaVrijednost = null;
-        private int zadnjiObrisaniRedIndex = -1;
-        private string zadnjeObrisanoPolje = null;
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // Puni DataGridView kontrolu podacima iz baze
+           
             this.zdravstveni_podaciTableAdapter2.Fill(this.pI2324_msokser22_DBDataSet2.Zdravstveni_podaci);
 
-            // Postavlja automatsko prilagođavanje visine redova prema sadržaju ćelija
+            
             Zdravstveni_podaci.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
-            // Dodaje stavke u ComboBox za pretragu
+           
             Pretraga.Items.AddRange(new string[] {
                 "Pretraga", "Opis simtoma", "Rezultati krvne pretrage", "Informacije o alergiji",
                 "Popis prepisanih lijekova", "Napomene liječnika", "Dijagnoza",
                 "Plan liječenja", "Osobne bilješke", "Termin"
             });
 
-            // Event handler za gumb Obriši
+            
             Obriši.Click += Obriši_Click;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Ako nema posebne logike za klik na ćeliju, možete ukloniti ovaj metod.
+            
         }
 
         
@@ -160,12 +151,58 @@ namespace Zadaca_03
 
         private void Obriši_Click(object sender, EventArgs e)
         {
-            // Implementacija logike za brisanje
-        }
+            if (Zdravstveni_podaci.SelectedCells.Count > 0)
+            {
+                DataGridViewCell selectedCell = Zdravstveni_podaci.SelectedCells[0];
 
-        private void Spremi_Click(object sender, EventArgs e)
-        {
-            // Implementacija logike za spremanje
+                // Check if the selected cell is in the "Osobne bilješke" column
+                if (selectedCell.OwningColumn.Name == "osobnebilješkeDataGridViewTextBoxColumn")
+                {
+                    // Retrieve the ID of the data to be updated
+                    int selectedRowIndex = selectedCell.RowIndex;
+                    int ID_podataka = Convert.ToInt32(Zdravstveni_podaci.Rows[selectedRowIndex].Cells["Column1"].Value);
+
+                    // Define the SQL DELETE statement
+                    string deleteQuery = "UPDATE Zdravstveni_podaci SET Osobne_bilješke = NULL WHERE ID_podataka = @ID_podataka";
+
+                    // Set up the SQL connection and command
+                    string connectionString = "Server=31.147.206.65;Database=PI2324_msokser22_DB;User Id=PI2324_msokser22_User;Password=$khO:dz&;";
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        using (SqlCommand command = new SqlCommand(deleteQuery, connection))
+                        {
+                            // Add parameter for ID_podataka
+                            command.Parameters.AddWithValue("@ID_podataka", ID_podataka);
+
+                            try
+                            {
+                                // Open the connection and execute the DELETE command
+                                connection.Open();
+                                int rowsAffected = command.ExecuteNonQuery();
+
+                                // Check if any rows were affected
+                                if (rowsAffected > 0)
+                                {
+                                    // Clear the value of the selected cell
+                                    selectedCell.Value = DBNull.Value;
+
+                                    MessageBox.Show("Podatak uspješno obrisan.", "Informacija", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Došlo je do greške prilikom ažuriranja podataka u bazi: " + ex.Message, "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Možete obrisati samo podatke iz stupca 'Osobne bilješke'.", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+           
         }
 
 
@@ -184,7 +221,7 @@ namespace Zadaca_03
             }
             else
             {
-                // Ako pretraženi pojam nije ni dijagnoza ni lijek, vrati sve podatke
+               
                 query = "SELECT * FROM Zdravstveni_podaci";
             }
 
@@ -205,20 +242,18 @@ namespace Zadaca_03
 
         private void UcitajPodatke()
         {
-            // Ovdje ponovno učitajte podatke u DataGridView kontrolu
-            // Na primjer, možete ponovno pozvati Fill metodu kako biste ažurirali podatke iz baze podataka
             this.zdravstveni_podaciTableAdapter2.Fill(this.pI2324_msokser22_DBDataSet2.Zdravstveni_podaci);
         }
 
 
         private void ManipulacijaForma_PodaciPohranjeni(object sender, EventArgs e)
         {
-            // Ova metoda može biti prazna ili se koristiti za dodatnu logiku
+            
         }
 
         private void ManipulacijaForma_FormClosed(object sender, FormClosedEventArgs e)
         {
-            UcitajPodatke();  // Ponovno učitajte podatke nakon zatvaranja forme
+            UcitajPodatke();  
         }
 
     }
