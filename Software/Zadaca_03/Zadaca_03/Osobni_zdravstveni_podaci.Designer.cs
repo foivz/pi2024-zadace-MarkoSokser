@@ -346,7 +346,7 @@
             this.textBoxPretraga.Name = "textBoxPretraga";
             this.textBoxPretraga.Size = new System.Drawing.Size(303, 22);
             this.textBoxPretraga.TabIndex = 8;
-            this.textBoxPretraga.Text = "Unesite neki od propisan lijekova ili dijagnozu:  ";
+            this.textBoxPretraga.TextChanged += new System.EventHandler(this.textBoxPretraga_TextChanged);
             // 
             // buttonPretraga
             // 

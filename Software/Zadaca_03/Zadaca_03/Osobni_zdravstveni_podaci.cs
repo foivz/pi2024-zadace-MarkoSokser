@@ -69,6 +69,7 @@ namespace Zadaca_03
 
             
             Obriši.Click += Obriši_Click;
+            SetPlaceholder(textBoxPretraga, "Unesite neki od propisan lijekova ili dijagnozu");
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -254,6 +255,42 @@ namespace Zadaca_03
         {
             
             UcitajPodatke();
+        }
+
+        private void textBoxPretraga_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void SetPlaceholder(TextBox textBox, string placeholderText)
+        {
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                textBox.Text = placeholderText;
+                textBox.ForeColor = Color.Gray;
+            }
+
+            textBox.GotFocus += (sender, e) => RemovePlaceholder(textBox, placeholderText);
+            textBox.LostFocus += (sender, e) => ShowPlaceholder(textBox, placeholderText);
+        }
+
+        private void RemovePlaceholder(TextBox textBox, string placeholderText)
+        {
+            if (textBox.Text == placeholderText)
+            {
+                textBox.Text = "";
+                textBox.ForeColor = Color.Black;
+            }
+        }
+
+        private void ShowPlaceholder(TextBox textBox, string placeholderText)
+        {
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                textBox.Text = placeholderText;
+                textBox.ForeColor = Color.Gray;
+            }
         }
 
     }
