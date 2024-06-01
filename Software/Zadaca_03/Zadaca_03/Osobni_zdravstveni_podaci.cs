@@ -217,6 +217,7 @@ namespace Zadaca_03
             {
                
                 query = "SELECT * FROM Zdravstveni_podaci";
+                MessageBox.Show("Pretražujete podatke po nepostojećem kriteriju'.", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             string connectionString = "Server=31.147.206.65;Database=PI2324_msokser22_DB;User Id=PI2324_msokser22_User;Password=$khO:dz&;";
